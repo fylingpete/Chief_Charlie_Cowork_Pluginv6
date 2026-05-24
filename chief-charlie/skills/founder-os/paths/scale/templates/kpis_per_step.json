@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "_doc": "Scale-spezifische KPI-Definitionen pro Step. Reihenfolge: Step-spezifisch / Cross-Step #1 / Cross-Step #2. Cross-Step-KPIs (Rule of 40, NDR, Leadership-Health-Score from Wickman Organizational Checkup™) werden in path_state.cross_kpis persisted und beim Step-Wechsel preserviert — der Step-spezifische KPI startet vom Default. Targets sind kanonisch aus knowledge/scale/*.md doctrine + roadmap_defaults.json readyWhen-Lists.",
+  "phase_label": "SCALE",
+  "steps": {
+    "3.1": {
+      "rows": [
+        { "metric": "Drei Gates grün (Monate sustained)", "current": "0/3", "target": "alle 3 grün seit ≥ 6 Mo durchgehend", "status": "red" },
+        { "metric": "Rule of 40", "current": "n/a", "target": "≥ 40 (≥ 60 best-in-class)", "status": "red" },
+        { "metric": "Net Dollar Retention (NDR)", "current": "n/a", "target": "> 100% (> 110% strong, > 120% best-in-class)", "status": "red" }
+      ]
+    },
+    "3.2": {
+      "rows": [
+        { "metric": "Organizational Checkup™ Score", "current": "n/a", "target": "≥ 80 (≥ 70 als Step-Exit-Floor)", "status": "red" },
+        { "metric": "Rule of 40", "current": "n/a", "target": "≥ 40 sustained", "status": "red" },
+        { "metric": "Net Dollar Retention (NDR)", "current": "n/a", "target": "> 110% sustained", "status": "red" }
+      ]
+    },
+    "3.3": {
+      "rows": [
+        { "metric": "Erstes Land % of New ARR", "current": "0", "target": "≥ 10% für ≥ 2 Quartale", "status": "red" },
+        { "metric": "Rule of 40", "current": "n/a", "target": "≥ 40 sustained", "status": "red" },
+        { "metric": "Organizational Checkup™ Score", "current": "n/a", "target": "≥ 80 sustained", "status": "red" }
+      ]
+    },
+    "3.4": {
+      "rows": [
+        { "metric": "Additional Vector % of Total ARR", "current": "0", "target": "≥ 20% mit eigener positiver Unit Economics", "status": "red" },
+        { "metric": "Rule of 40", "current": "n/a", "target": "≥ 40 sustained ≥ 4 Q (Scale-Complete-Gate)", "status": "red" },
+        { "metric": "Net Dollar Retention (NDR)", "current": "n/a", "target": "≥ 110% sustained ≥ 4 Q (combined Product-Mix)", "status": "red" }
+      ]
+    }
+  }
+}

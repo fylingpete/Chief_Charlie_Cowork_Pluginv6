@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "_doc": "Step-specific debrief question for onboarding Q9 (GTM path). Same protocol as PMF debrief_questions.json.",
+  "steps": {
+    "2.1": {
+      "main": "Was hast du im Vertrieb bisher konkret gemacht? Welche Channels (Cold/Warm/Content/Paid), wie viele Touches, was hat geklappt, was nicht?",
+      "followup_triggers": [
+        { "if_missing": "channel_specifics", "ask": "Welche Channels konkret — Cold Calls, LinkedIn, Empfehlungen, Paid?" },
+        { "if_missing": "failure_specifics", "ask": "Was scheitert konkret — Erreichquote, Termin-Quote, Pitch, Preis, …?" }
+      ]
+    },
+    "2.2": {
+      "main": "Wie verkaufst du heute? Bist du noch selbst dran, oder hast du schon Hilfe? Was funktioniert in deinem Pitch zuverlässig, was scheitert immer wieder?",
+      "followup_triggers": [
+        { "if_missing": "founder_dependency", "ask": "Was passiert, wenn du eine Woche nicht selbst verkaufst — bricht alles weg, oder läuft's weiter?" },
+        { "if_missing": "transferability", "ask": "Hast du schon mal jemand anderem deinen Pitch beigebracht? Was war schwer dabei?" }
+      ]
+    },
+    "2.3": {
+      "main": "Welche Lead-Maschine läuft heute, wie viel kostet ein Kunde dich (CAC), und hast du irgendeinen Kanal, der ohne dich vor Ort funktioniert?",
+      "followup_triggers": [
+        { "if_missing": "cac_data", "ask": "Hast du eine ungefähre Zahl für deinen CAC, oder ist das noch Schätzung?" },
+        { "if_missing": "scalable_channel", "ask": "Welcher Channel würde sich verdoppeln lassen, wenn du das Budget verdoppelst?" }
+      ]
+    },
+    "2.4": {
+      "main": "Wie hältst du heute Bestandskunden? Was funktioniert beim Onboarding, was kippt regelmäßig, und welche Kunden kommen von alleine zurück?",
+      "followup_triggers": [
+        { "if_missing": "churn_pattern", "ask": "Wenn jemand kündigt — siehst du ein Muster (Branche, Use Case, Zeitpunkt)?" }
+      ]
+    },
+    "2.5": {
+      "main": "Wo blutet heute der Profit — hohe Personal-Kosten, niedrige Preise, lange Sales-Cycles, ineffiziente Delivery? Was hast du schon probiert um's zu fixen?",
+      "followup_triggers": [
+        { "if_missing": "unit_economics", "ask": "Kennst du ungefähr Gross Margin / Contribution Margin pro Kunde?" }
+      ]
+    }
+  }
+}

@@ -1,0 +1,422 @@
+{
+  "schema_version": 1,
+  "_doc": "Canonical default projects per GTM step. Loaded into dashboard_data.data.projects at onboarding (for start step) and at phase-change (additive for new step). Personalized by the agent based on business_profile.industry / .buyer / .product_description and (for 2.1) path_state.current_best_channel from onboarding Q10. Mirrors kpis_per_step.json structure. Each step has 6–8 projects designed to (a) advance the step's mainGoal and (b) work against the canonical bottlenecks in roadmap_defaults.json. Each project also carries 2–3 anchor `tasks` (deterministic, structural — the agent appends 1–2 user-tailored tasks at write time based on business_profile + current_best_channel + step_debrief). At write time the agent adds `n` (1-indexed), `status: 'later'` (or 'current' for the obviously first project), and `step: '<sub_id>'`.",
+  "steps": {
+    "2.1": {
+      "projects": [
+        {
+          "title": "Run 20 discovery calls with ICP candidates and non-ICP cold prospects",
+          "outcome": "Call log showing which company types convert and which don't",
+          "goal": "ICP from observation, not from a slide",
+          "why": "ICP comes from observing who closes — not from a slide",
+          "tasks": [
+            "Write your ICP hypothesis in 3 sentences (before the first call)",
+            "Build the candidate list: 10 ICP-match + 10 wildcard prospects",
+            "Set up a call-log template: date, company, ICP-match?, outcome, pattern note"
+          ]
+        },
+        {
+          "title": "Write the 1-page sales playbook (ICP+/-, use-case, channel, message, motion)",
+          "outcome": "A playbook a stranger could read and execute",
+          "goal": "Repeatable means transferable",
+          "why": "If it's not written it's not repeatable — repeatable means transferable",
+          "tasks": [
+            "Draft the 1-page playbook outline with the 5 required sections empty",
+            "Fill each section using evidence from your discovery-call log",
+            "Have a non-founder read it and try to explain the sale back to you"
+          ]
+        },
+        {
+          "title": "Close 2 deals end-to-end using the playbook (founder-led)",
+          "outcome": "2 case studies with quotes showing what worked",
+          "goal": "Two wins via the same playbook",
+          "why": "2 wins via the same playbook IS the repeatability test — anything else is anecdote",
+          "tasks": [
+            "Identify 5 ICP-match prospects from your discovery-call log most likely to close",
+            "Run each through the playbook end-to-end and log every deviation you make",
+            "After each close, write a 1-page case study with verbatim buyer quotes"
+          ]
+        },
+        {
+          "title": "Pick 1 channel from Hormozi's Core Four and test exclusively for 30 days",
+          "outcome": "A decision memo: warm vs content vs cold vs paid, with 30-day evidence",
+          "goal": "A verdict on the lead channel",
+          "why": "Testing 4 channels in parallel gives no signal — 1 channel exclusively gives a verdict",
+          "tasks": [
+            "Pick 1 channel based on current_best_channel evidence and write down why",
+            "Define the 30-day test: target volume, target conversion, kill criteria",
+            "Write the 30-day decision memo: keep / kill / scale, with the numbers"
+          ]
+        },
+        {
+          "title": "Build a 5-objection handling guide",
+          "outcome": "1-page script with crisp responses to the top 5 objections you hit",
+          "goal": "Stop relearning the same objections every call",
+          "why": "Without objection prep every call relearns the same lessons",
+          "tasks": [
+            "Review the last 10 call recordings or notes and tag every objection raised",
+            "Pick the 5 most frequent and write a crisp 3-sentence response for each",
+            "Test the responses on 5 live calls and refine the wording weekly"
+          ]
+        },
+        {
+          "title": "Document ICP+ and ICP- in writing",
+          "outcome": "A doc listing what makes a buyer qualified vs disqualified",
+          "goal": "Disqualification discipline",
+          "why": "ICP- (who NOT to sell) is the harder discipline and the bigger speed-unlock",
+          "tasks": [
+            "List 5 traits of every closed-won customer and 5 traits of every painful one",
+            "Write the ICP+ / ICP- doc with 5 must-haves and 5 instant-disqualifiers",
+            "Review the next 10 inbound leads against the doc and log disqualification rate"
+          ]
+        },
+        {
+          "title": "Build a pre-call research template",
+          "outcome": "A 5-field checklist used before every discovery call",
+          "goal": "Show up as an expert, not a tourist",
+          "why": "Research-prep is the difference between an expert and a tourist on the call",
+          "tasks": [
+            "List 5 facts to know before every call (company, role, trigger, tools, peers)",
+            "Build the template as a Notion / Doc / sheet block you can copy per call",
+            "Spend 10 minutes per call filling the template and time-track the prep"
+          ]
+        }
+      ]
+    },
+    "2.2": {
+      "projects": [
+        {
+          "title": "Hire 2 sales reps with the playbook as the job spec",
+          "outcome": "2 reps onboarded with a hiring memo explaining why each was picked",
+          "goal": "Hire on evidence, not vibes",
+          "why": "Hiring without a written playbook means hiring on vibes — vibes don't ramp",
+          "tasks": [
+            "Turn the 1-page playbook into a JD with skills mapped to each playbook section",
+            "Run a structured 3-stage process: screen, scenario, playbook-readback",
+            "Write a 1-page hiring memo per rep naming why they cleared each stage"
+          ]
+        },
+        {
+          "title": "Run a 4-week structured rep onboarding cohort",
+          "outcome": "4 weekly sessions + rep-knowledge quizzes proving playbook mastery",
+          "goal": "A curriculum, not a Slack channel",
+          "why": "Reps need a curriculum, not a Slack channel",
+          "tasks": [
+            "Outline the 4 weekly modules: ICP, playbook, objections, deal review",
+            "Build a 10-question quiz per week and require a 90% pass to advance",
+            "Run weekly live sessions with role-play and record them for the next cohort"
+          ]
+        },
+        {
+          "title": "Seed each rep with 10 warm intros from the founder's network",
+          "outcome": "20 warm-intro at-bats logged plus first-week win signal",
+          "goal": "Early wins that reveal coachability",
+          "why": "Warm intros let new reps win early — and reveal who's coachable",
+          "tasks": [
+            "List 30 warm contacts and tag which are ICP-fit",
+            "Send 20 founder-led intros (10 per rep) over week 1",
+            "Track at-bat → meeting → opportunity per rep in a shared sheet"
+          ]
+        },
+        {
+          "title": "Hold weekly 1:1 coaching with deal-call recordings",
+          "outcome": "16 recorded coaching sessions (4 per rep per month) with specific feedback",
+          "goal": "Compounding rep development",
+          "why": "Coaching is what compounds — a rep without coaching plateaus",
+          "tasks": [
+            "Set a recurring 1-hour weekly 1:1 with each rep with calls reviewed in advance",
+            "Build a coaching template: 1 strength, 1 fix, 1 commitment per session",
+            "Log every coaching note in a shared doc and review monthly for patterns"
+          ]
+        },
+        {
+          "title": "Track rep activity and bookings daily in a shared dashboard",
+          "outcome": "A dashboard showing calls / meetings / proposals / wins per rep",
+          "goal": "Spot rep problems in days, not quarters",
+          "why": "Without daily metrics you spot rep problems 3 months late",
+          "tasks": [
+            "Define the 4 daily metrics: calls, meetings booked, proposals out, wins",
+            "Build the dashboard in your CRM or a sheet with auto-refresh per rep",
+            "Run a 10-min daily standup against the numbers each morning"
+          ]
+        },
+        {
+          "title": "Run customer-feedback interviews 30 days post-close (5 per rep)",
+          "outcome": "10 interviews confirming the rep's deals stuck and customers are happy",
+          "goal": "Quality of revenue, not just quantity",
+          "why": "A booking is not a win — a 30-day happy customer is a win",
+          "tasks": [
+            "Set a 30-days-post-close calendar trigger for every closed deal",
+            "Run a 20-min interview covering: usage, expectations met, would-recommend score",
+            "Roll up findings monthly: % of deals \"sticky\" vs at-risk per rep"
+          ]
+        },
+        {
+          "title": "Update playbook v2 from rep-led learnings",
+          "outcome": "A revised 1-page playbook incorporating what the best rep does differently",
+          "goal": "Playbook that scales beyond the founder",
+          "why": "The first playbook was founder-only — v2 is what makes it scale",
+          "tasks": [
+            "Identify the top-performing rep and shadow 5 of their calls",
+            "List the 3 plays they run that aren't in v1 of the playbook",
+            "Rewrite the 1-page playbook as v2 and have all reps re-quiz against it"
+          ]
+        }
+      ]
+    },
+    "2.3": {
+      "projects": [
+        {
+          "title": "Test 5 lead sources across Core Four channels",
+          "outcome": "A tracking sheet showing volume / cost / quality / conversion per source",
+          "goal": "Find the second 20% channel",
+          "why": "Channel #2 doesn't reveal itself without explicit testing",
+          "tasks": [
+            "List 5 candidate sources spanning warm, content, cold, and paid",
+            "Allocate a fixed test budget and 30-day window per source",
+            "Log volume / cost-per-lead / SQL conversion in a shared tracking sheet"
+          ]
+        },
+        {
+          "title": "Scale the top-performing source to >20% of pipeline",
+          "outcome": "A monthly playbook showing volume, cost-per-lead and rep-assignment for source #1",
+          "goal": "Predictable lead flow from source #1",
+          "why": "A winning source isn't winning until it's >20% and predictable",
+          "tasks": [
+            "Document the winning source as a 1-page operating playbook",
+            "Set monthly volume + CPL targets and a rep-assignment rule",
+            "Review weekly: actual vs target volume, CPL drift, conversion stability"
+          ]
+        },
+        {
+          "title": "Scale a second source to >20% of pipeline",
+          "outcome": "A documented playbook for source #2 with the same predictability",
+          "goal": "Halve single-channel risk",
+          "why": "Single-channel dependency is a strategic risk — 2 sources halves it",
+          "tasks": [
+            "Pick source #2 from the test results and clone the source-#1 playbook format",
+            "Set monthly volume + CPL targets at 50% of source-#1 to start, ramp to parity",
+            "Review weekly side-by-side with source #1 to spot quality differences"
+          ]
+        },
+        {
+          "title": "Hire a demand-gen lead with the first 3 campaigns specced",
+          "outcome": "3 campaign briefs tied to ICP, core message and landing pages",
+          "goal": "Break the founder-led demand-gen cap",
+          "why": "Founder-led demand-gen caps at ~50% of needed volume — a specialist breaks the cap",
+          "tasks": [
+            "Write the demand-gen JD pointing to the 2 scaled sources as proof of concept",
+            "Draft 3 campaign briefs (one per top source + 1 stretch) with ICP and message",
+            "Run a structured hiring process: screen, scenario-brief response, references"
+          ]
+        },
+        {
+          "title": "Organize 2 sales reps into a formal pod with weekly forecasting",
+          "outcome": "A pod charter covering territory, lead routing and forecast cadence",
+          "goal": "From individual reps to a coachable system",
+          "why": "Pods turn individual reps into a coachable system",
+          "tasks": [
+            "Write the pod charter: territory, lead routing, forecast cadence, escalation",
+            "Run a weekly 60-min pod meeting: forecast, blocker review, deal coaching",
+            "Track pod-level KPIs in a single dashboard alongside individual rep KPIs"
+          ]
+        },
+        {
+          "title": "Add a 3rd rep and replicate the pod structure",
+          "outcome": "A pod-2 charter mirroring pod-1 plus first-month performance",
+          "goal": "Prove the playbook scales beyond pod-1",
+          "why": "If pod-2 won't ramp on the same playbook, the playbook isn't actually scalable yet",
+          "tasks": [
+            "Copy the pod-1 charter as pod-2 with the new rep assigned",
+            "Replicate the 4-week onboarding cohort for the new rep",
+            "Compare pod-1 vs pod-2 first-month metrics and document any deltas"
+          ]
+        },
+        {
+          "title": "Build automated lead-routing (CRM rules or Sheets formula)",
+          "outcome": "Automatic lead → pod assignment with SLA tracking",
+          "goal": "Routing scales to >50 leads/week",
+          "why": "Manual routing breaks at >50 leads/week — automate before it bottlenecks",
+          "tasks": [
+            "Document current manual routing rules in plain English",
+            "Implement as CRM workflow or sheet formula with timestamps for SLA tracking",
+            "Run a 1-week shadow: manual vs automated, fix mis-routings before cutover"
+          ]
+        },
+        {
+          "title": "Run a monthly demand-gen + sales alignment sync",
+          "outcome": "A monthly meeting covering campaign impact, lead-quality feedback and forecast",
+          "goal": "Keep demand-gen and sales pulling the same rope",
+          "why": "The most expensive failure in 2.3 is demand-gen and sales drifting apart",
+          "tasks": [
+            "Set a recurring monthly 60-min calendar block with demand-gen + sales leads",
+            "Build a 4-block agenda: campaign impact, lead-quality, forecast, next-month bets",
+            "Document decisions in a 1-page recap and share within 24h"
+          ]
+        }
+      ]
+    },
+    "2.4": {
+      "projects": [
+        {
+          "title": "Define your activation metric (usage event or threshold)",
+          "outcome": "A 1-page memo on what metric and why it's predictive of retention",
+          "goal": "End the \"activated\" debate",
+          "why": "\"Activated\" is the most overloaded word in SaaS — write down what YOU mean",
+          "tasks": [
+            "List 5 candidate activation events from your usage data",
+            "Cross-tab each candidate against 90-day retention to find the most predictive",
+            "Write the 1-page memo naming the metric, threshold, and predictive evidence"
+          ]
+        },
+        {
+          "title": "Map the Time-to-Wow onboarding journey with 5 milestones",
+          "outcome": "A timeline: signup → first value → second value → habit → advocate",
+          "goal": "Name the moment of value",
+          "why": "Without a named Time-to-Wow every onboarding feels acceptable",
+          "tasks": [
+            "List every onboarding step from signup to month-2 active",
+            "Pick the 5 milestones that map to first value, second value, habit, advocate",
+            "Document the target time-from-signup for each milestone"
+          ]
+        },
+        {
+          "title": "Build a weekly customer-health dashboard",
+          "outcome": "A dashboard: new, activated, at-risk, churned, expansion candidates",
+          "goal": "Customer success that compounds",
+          "why": "Customer success without a dashboard is intuition — and intuition doesn't compound",
+          "tasks": [
+            "Define the 5 health states: new, activated, at-risk, churned, expansion",
+            "Write the rule for each state based on activation metric + usage cadence",
+            "Build the dashboard with auto-refresh and a Friday review block"
+          ]
+        },
+        {
+          "title": "Run guided onboarding sessions with 10 new customers",
+          "outcome": "Notes on activation % and friction points per session",
+          "goal": "See what the dashboard hides",
+          "why": "Watching real onboardings reveals what the dashboard hides",
+          "tasks": [
+            "Build an onboarding-session template with a checklist of the 5 milestones",
+            "Schedule and run 10 founder-led 45-min onboarding sessions with new customers",
+            "Log friction points per session and tag against the milestone map"
+          ]
+        },
+        {
+          "title": "Conduct monthly churn interviews (3 lost customers per month)",
+          "outcome": "A churn-reason log with quotes and fix ideas",
+          "goal": "Capture churn signal before it freezes",
+          "why": "Lost customers tell you what your survey can't — only if you ask quickly",
+          "tasks": [
+            "Set a calendar trigger to reach out within 7 days of every cancellation",
+            "Run 20-min interviews with a 5-question script focused on the breaking point",
+            "Log every churn-reason with quotes in a shared sheet and tag by category"
+          ]
+        },
+        {
+          "title": "Build an expansion-interview program with 5 power users",
+          "outcome": "Identified upsell opportunities and feature requests for NDR growth",
+          "goal": "Pull NDR above 100%",
+          "why": "Net revenue retention is 70% of long-term enterprise value",
+          "tasks": [
+            "Identify 5 power users by usage and revenue-per-customer",
+            "Run 45-min interviews focused on: what would they pay more for, who else uses it",
+            "Document 3 expansion bets and assign each to a feature, package, or seat motion"
+          ]
+        },
+        {
+          "title": "Write the 1-page customer success playbook",
+          "outcome": "A guide covering first 30 days, recurring issues, success milestones and escalation",
+          "goal": "Day-1-ready playbook for your first CS hire",
+          "why": "When you hire a CS person they need the playbook on day 1, not week 6",
+          "tasks": [
+            "Outline 4 sections: first 30 days, recurring issues, milestones, escalation",
+            "Fill each section using evidence from guided onboardings and churn interviews",
+            "Have a friendly customer read it and stress-test against their own experience"
+          ]
+        }
+      ]
+    },
+    "2.5": {
+      "projects": [
+        {
+          "title": "Calculate blended CAC across all channels",
+          "outcome": "A spreadsheet showing cost-per-acquisition by source plus blended",
+          "goal": "One CAC number for the business",
+          "why": "Without blended CAC every channel feels affordable in isolation",
+          "tasks": [
+            "List every customer-acquisition cost line item by channel for the last 90 days",
+            "Map each cost to the customers it produced via your tracking sheet",
+            "Compute CAC per channel and blended CAC and document the assumptions"
+          ]
+        },
+        {
+          "title": "Measure LTV from your first 2 cohorts (12-month retention + expansion)",
+          "outcome": "Cohort revenue-per-customer over 12 months",
+          "goal": "LTV from data, not from forecast",
+          "why": "LTV from new customers is fantasy — LTV from cohorts is data",
+          "tasks": [
+            "Pick the 2 oldest cohorts with 12+ months of data",
+            "Pull monthly revenue per customer in each cohort and sum to month-12",
+            "Calculate average LTV per cohort and note the variance"
+          ]
+        },
+        {
+          "title": "Calculate LTV:CAC ratio and CAC-Payback period",
+          "outcome": "A 1-page dashboard: LTV, CAC, ratio and payback per segment",
+          "goal": "Three numbers that decide the business",
+          "why": "Three numbers decide whether you have a business or a project",
+          "tasks": [
+            "Combine LTV cohort data with blended CAC to compute the ratio",
+            "Compute CAC payback = CAC / monthly gross profit per customer",
+            "Build the 1-page dashboard and review monthly with the leadership team"
+          ]
+        },
+        {
+          "title": "Model gross margin by customer segment",
+          "outcome": "A P&L showing COGS, delivery cost and margin per segment",
+          "goal": "Find the segment that's secretly losing money",
+          "why": "Average gross margin hides the segment that's secretly losing money",
+          "tasks": [
+            "List every cost-of-delivery line item: hosting, support, CS, third-party fees",
+            "Allocate each cost to segments based on usage or headcount",
+            "Compute gross margin per segment and rank from highest to lowest"
+          ]
+        },
+        {
+          "title": "Identify and deprioritize lowest-margin segments",
+          "outcome": "A decision memo on which segments to stop pursuing and by when",
+          "goal": "Margin lift via subtraction",
+          "why": "The fastest path to higher margin is firing the worst segment",
+          "tasks": [
+            "Rank segments by gross margin and flag any below your target threshold",
+            "Write a 1-page decision memo: keep / shrink / fire, with reasoning per segment",
+            "Update sales playbook ICP- and demand-gen targeting to reflect the call"
+          ]
+        },
+        {
+          "title": "Build a unit-economics dashboard updated monthly",
+          "outcome": "A monthly view: MRR, CAC, LTV, churn, NRR, margin",
+          "goal": "Unit economics as a monthly habit",
+          "why": "Unit economics is a habit — review monthly or it rots",
+          "tasks": [
+            "List the 6 metrics: MRR, CAC, LTV, churn, NRR, gross margin",
+            "Build the dashboard with one source-of-truth view and auto-refresh",
+            "Set a recurring monthly leadership review block and document decisions"
+          ]
+        },
+        {
+          "title": "Run a pricing analysis vs competitors + willingness-to-pay data",
+          "outcome": "A research doc on whether price or package changes can lift margin",
+          "goal": "A pricing lever, evidenced",
+          "why": "A 10% price lift in SaaS often closes the entire profitability gap",
+          "tasks": [
+            "Compile competitor pricing for 5 named alternatives in a comparison sheet",
+            "Run a willingness-to-pay survey or 5 interviews with current customers",
+            "Write a 1-page recommendation: hold / raise / repackage with the evidence"
+          ]
+        }
+      ]
+    }
+  }
+}

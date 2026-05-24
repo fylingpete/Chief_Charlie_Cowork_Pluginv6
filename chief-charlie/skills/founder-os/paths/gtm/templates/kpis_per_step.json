@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "_doc": "Hardcoded KPI-Definitionen pro GTM-Step. Reihenfolge: Step-spezifisch / Bookings (Cross-Step) / Retention oder LTV:CAC (Cross-Step abhängig vom Step). Beim Step-Wechsel werden current-Werte für Cross-Step-Tracker (Bookings, Retention/LTV:CAC) vom letzten Stand übernommen; der Step-KPI startet vom Default. Targets sind kanonisch aus Skok Phase 4-8 + roadmap_defaults.json.",
+  "phase_label": "GTM",
+  "steps": {
+    "2.1": {
+      "rows": [
+        { "metric": "Buyer-Conversations", "current": "0", "target": "50-150 (Kazanjy)", "status": "red" },
+        { "metric": "Repeated Wins (gleicher Prozess)", "current": "0", "target": "≥2", "status": "red" },
+        { "metric": "Channel-Pick aktiv", "current": "keiner", "target": "1 aus Core Four exklusiv 30+ Tage", "status": "red" }
+      ]
+    },
+    "2.2": {
+      "rows": [
+        { "metric": "Reps bei >4× OTE Productivity", "current": "0/2", "target": "≥1 von 2 post-ramp", "status": "red" },
+        { "metric": "Founder-Off-Closing-Seat (Tage)", "current": "0", "target": "≥30 Tage", "status": "red" },
+        { "metric": "Bookings (Net New ARR / Mo)", "current": "0", "target": "wachsend, getrackt", "status": "red" }
+      ]
+    },
+    "2.3": {
+      "rows": [
+        { "metric": "Lead-Sources je >20% Anteil", "current": "1", "target": "≥2", "status": "red" },
+        { "metric": "Pods bei Quota seit ≥2 Quartalen", "current": "0", "target": "≥2", "status": "red" },
+        { "metric": "Bookings (Net New ARR / Mo)", "current": "0", "target": "M-o-M Wachstum, no flatline", "status": "red" }
+      ]
+    },
+    "2.4": {
+      "rows": [
+        { "metric": "Logo-Retention 12 Mo", "current": "n/a", "target": ">85%", "status": "red" },
+        { "metric": "Net Dollar Retention (NDR)", "current": "n/a", "target": ">100% (Negative Churn)", "status": "red" },
+        { "metric": "Time-to-Wow (Median)", "current": "n/a", "target": "<1h SMB / <1Wo Mid / <30T Ent", "status": "red" }
+      ]
+    },
+    "2.5": {
+      "rows": [
+        { "metric": "LTV:CAC", "current": "n/a", "target": ">3 (auf 12-Mo-Cohorts)", "status": "red" },
+        { "metric": "CAC-Payback (Monate)", "current": "n/a", "target": "<18 (B2B) / <12 (SMB)", "status": "red" },
+        { "metric": "Gross Margin", "current": "n/a", "target": ">70%", "status": "red" }
+      ]
+    }
+  }
+}

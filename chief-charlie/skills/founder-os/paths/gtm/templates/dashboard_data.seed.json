@@ -1,0 +1,343 @@
+{
+  "schema_version": 1,
+  "_doc": "Founder-OS single source of truth. All UI pages (home, roadmap, projects, tasks, kpis) bind into this file via $state pointers. Fields prefixed with `_doc` or `_doc_` are documentation for the agent — they are ignored by the UI. Do not rename top-level keys. Append-only events go to *.jsonl files. When uncertain about a field, ask the user before writing.",
+  "_doc_here_invariant": "INVARIANT: `here: true` MUST appear at exactly ONE node across the entire roadmap.phases[*].subs[*] tree. Before setting `here: true` on a new sub, you MUST set/leave `here: false` (or remove the key) on every other sub. Treat this as a hard agent rule — never let two `here: true` exist at the same time.",
+  "data": {
+    "_doc_business_profile": "Captured during onboarding Q1-Q5. Immutable after onboarding unless explicitly changed by user. product_description / problem_solved / customer_description come from Q5 (free-text parsed into three parts). elevator_pitch holds Q5 verbatim. pmf_substage only set when current_path = 'pmf' (Q3a). gtm_substage only set when current_path = 'gtm' (Q3b).",
+    "business_profile": {
+      "build_type": null,
+      "buyer": null,
+      "stage": null,
+      "pmf_substage": null,
+      "gtm_substage": null,
+      "industry": null,
+      "product_description": null,
+      "problem_solved": null,
+      "customer_description": null,
+      "elevator_pitch": null
+    },
+    "_doc_focus": "Captured during onboarding Q6-Q8. Updated whenever user reframes priorities (e.g. in Quarterly Rebuild). today = full Q6 answer verbatim. revenue_today / team_size_today / status_one_liner = parsed from Q6 if extractable. goal_12m and milestone_90d are STRUCTURED OBJECTS (Q7) with revenue_target / customer_count_target / team_size_target / qualitative_goals[] / raw_text — populate what the user gives, leave the rest null. raw_text is always populated.",
+    "focus": {
+      "today": null,
+      "revenue_today": null,
+      "team_size_today": null,
+      "status_one_liner": null,
+      "goal_12m": {
+        "revenue_target": null,
+        "customer_count_target": null,
+        "team_size_target": null,
+        "qualitative_goals": [],
+        "raw_text": null
+      },
+      "milestone_90d": {
+        "revenue_target": null,
+        "customer_count_target": null,
+        "team_size_target": null,
+        "qualitative_goals": [],
+        "raw_text": null
+      },
+      "bottleneck": null
+    },
+    "_doc_current_path": "One of: 'pmf' | 'gtm' | 'scale'. Routed during onboarding from business_profile + focus answers. Switched only via explicit Path Switch flow (see SKILL.md).",
+    "current_path": "gtm",
+    "_doc_path_state": "Path-scoped state for the active path. Replaces the legacy pmf-state.md frontmatter.",
+    "path_state": {
+      "onboarding_completed_at": null,
+      "current_step": null,
+      "readiness": {},
+      "survey_infrastructure": {},
+      "reminders": {
+        "checkin_id": null
+      },
+      "_doc_cadences": "When the recurring operations last fired. next_*_due is computed and used by the master Onboarding Hook to surface 'check-in/measurement/rebuild due' to the user.",
+      "cadences": {
+        "last_checkin_at": null,
+        "next_checkin_due": null,
+        "last_monthly_at": null,
+        "next_monthly_due": null,
+        "last_quarterly_at": null,
+        "next_quarterly_due": null
+      },
+      "_doc_channel_signals": "Captured during onboarding Q10 (channels tried + current best). current_best_channel drives the auto_fill_recipe Source-Override for step 2.1. Updated during quarterly-rebuild Section 3 if mix shifts.",
+      "channels_tried": [],
+      "current_best_channel": null,
+      "signals_seen": [],
+      "_doc_icp_signals": "Counters that drive validation thresholds for icp-doc.md flips (v1-draft → v1-locked). Reset via icp-adjustment.md when hypothesis changes.",
+      "icp_signals": {
+        "conversations_since_change": 0,
+        "lost_deals_since_change": 0,
+        "repeat_wins_via_current_icp": 0
+      },
+      "_doc_messaging_signals": "Counters that drive validation thresholds for messaging-doc.md flips. Reset via messaging-adjustment.md when hypothesis changes.",
+      "messaging_signals": {
+        "conversations_since_change": 0,
+        "reply_rate_since_change": null,
+        "repeat_wins_via_current_message": 0
+      },
+      "_doc_events": "Event flags + history. fired flags are write-once (set by event-* operations). last_fired_at allows events that re-fire (e.g. channel_failed per channel). events_pending is consumed by the master Onboarding Hook at the start of the next session.",
+      "events": {
+        "gtm_25_milestone": { "fired": false, "fired_at": null, "deferred_at": null, "defer_reason": null },
+        "channel_failed": { "last_fired_at": null, "last_channel": null },
+        "conversion_drop": { "last_fired_at": null, "last_stage": null },
+        "churn_spike": { "last_fired_at": null, "last_root_cause": null }
+      },
+      "events_pending": [],
+      "warnings": []
+    },
+    "_doc_path_state_archive": "Preserved path_state from previous paths after a path switch. Keyed by path name (e.g. 'pmf'). Never written to during normal operation.",
+    "path_state_archive": {},
+    "_doc_currentFocus": "ONE sentence. The single outcome that defines success this phase. Max ~80 chars. No lists, no commas-as-bullets.",
+    "currentFocus": null,
+    "_doc_bottleneck": "What is currently blocking progress. title = ≤6 words. description = 1 sentence.",
+    "bottleneck": {
+      "title": null,
+      "description": null
+    },
+    "_doc_oneThing": "The ONE highest-leverage action for this week. ≤80 chars, action verb first. Surfaced on home and tasks pages.",
+    "oneThing": null,
+    "_doc_projects": "Projects for the current step. 6–8 per step total. Each: n (rank), title (≤4 words), why (1 sentence), goal (1 sentence with numeric target), outcome (1 sentence), status ('current' | 'later' | 'done'), step (sub_id like '2.1'). 2–3 marked as `current` to actively work on; rest are `later` until promoted.",
+    "projects": [],
+    "_doc_tasks": "Concrete tasks for this week. Fields: id (int, unique), text (≤80 chars), done (bool), today (bool — pinned to today), project (matches projects[*].title), date ('today'|'this week'|ISO), dateTone ('today'|'week'). New tasks: increment max id by 1.",
+    "tasks": [],
+    "_doc_kpis": "Phase-exit metrics. rows: metric (≤24 chars), current (string with unit), target (string with unit), status ('red'|'amber'|'green'). 3–5 rows max.",
+    "kpis": {
+      "phase": null,
+      "rows": []
+    },
+    "_doc_doNotDo": "Anti-priorities — things explicitly NOT to do right now (rendered as \"Don't do yet\" on home.json). 2–4 short imperatives (≤6 words).",
+    "doNotDo": {
+      "home": []
+    },
+    "_doc_roadmap": "Phase tree. currentSubphase = id of the sub where `here: true`. INVARIANT: exactly one sub across all phases has `here: true`. Mutate by flipping `here` (off the old, on the new); never edit currentFocus directly — it is derived. badge = optional pill rendered next to the roadmap title (e.g. 'First version' during onboarding). Set to null to hide.",
+    "roadmap": {
+      "currentSubphase": "2.1",
+      "phases": [
+        {
+          "id": "1",
+          "n": 1,
+          "name": "Search for Product-Market Fit",
+          "meta": "pmf",
+          "color": "#8B5CF6",
+          "expanded": false,
+          "gate": "Completed before GTM (Sean Ellis Score ≥ 40%).",
+          "subs": [
+            {
+              "id": "1.1",
+              "name": "Step 1a — Survey Design",
+              "question": "What do users actually feel about the product?",
+              "deliverables": [
+                "4-question Sean Ellis™ survey (Google Form)",
+                "Engaged-user filter defined (2x in 2 weeks)",
+                "Survey link sent to engaged users",
+                "pmf-survey.md written"
+              ],
+              "exit": "Survey is live, link sent to all engaged users, pmf-survey.md passes substance rubric."
+            },
+            {
+              "id": "1.2",
+              "name": "Step 1b — Collection",
+              "question": "How many responses do we have?",
+              "deliverables": [
+                "All engaged users contacted",
+                "Non-responders followed up personally",
+                "pmf-survey-responses.md populated",
+                "Respondent IDs tracked (no re-surveys)"
+              ],
+              "exit": "Minimum response threshold met and logged in pmf-survey-responses.md."
+            },
+            {
+              "id": "1.3",
+              "name": "Step 1c — Baseline Analysis",
+              "question": "What is our PMF score and who is our HXC?",
+              "deliverables": [
+                "Sean Ellis™ score calculated (% Very Disappointed)",
+                "V/S/N segmentation sheet",
+                "HXC persona v1",
+                "pmf-score-history.md (baseline entry)",
+                "pmf-segmentation-sheet.md"
+              ],
+              "exit": "Score calculated, HXC extracted from Very Disappointed only, segmentation sheet complete."
+            },
+            {
+              "id": "1.4",
+              "name": "Step 2 — Roadmap v1",
+              "question": "What do we build to move the score?",
+              "deliverables": [
+                "Fanatics analysis",
+                "Hopefuls blockers",
+                "50/50 roadmap: Doubling Down + Unblocking",
+                "pmf-roadmap.md"
+              ],
+              "exit": "Roadmap has ≥5 initiatives per half, each traced to survey data, 50/50 split documented."
+            },
+            {
+              "id": "1.5",
+              "name": "Step 3 — Execution Rhythm",
+              "question": "Is the operating loop running?",
+              "deliverables": [
+                "HXC persona locked as v1-confirmed",
+                "PMF OKR set (target: 60% Sean Ellis score)",
+                "Survey automation documented",
+                "WhatsApp reminders active",
+                "Calendar slots blocked for Monthly + Quarterly"
+              ],
+              "exit": "All checklist items complete — Operating Mode starts immediately."
+            },
+            {
+              "id": "1.6",
+              "name": "Operating Mode — Iterate until ≥ 40%",
+              "question": "Have we reached real product-market fit?",
+              "deliverables": [
+                "Weekly Check-In logs",
+                "Monthly Review reports with updated score",
+                "Quarterly Rebuild sessions",
+                "Sean Ellis Score ≥ 40% in 2 consecutive monthly reviews"
+              ],
+              "exit": "Sean Ellis Score ≥ 40%, confirmed in 2 consecutive monthly reviews."
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "n": 2,
+          "name": "Search for Go-to-Market Fit",
+          "meta": "repeatability",
+          "color": "#378ADD",
+          "expanded": true,
+          "subs": [
+            {
+              "id": "2.1",
+              "name": "Find repeatable sales motion",
+              "here": true,
+              "question": "Will many people pay?",
+              "deliverables": [
+                "Defined ICP segment",
+                "Repeatable outreach motion",
+                "Sales script",
+                "Conversion baseline",
+                "Weekly pipeline rhythm"
+              ],
+              "exit": "The same ICP, pain, message, and sales motion repeatedly create paying customers."
+            },
+            {
+              "id": "2.2",
+              "name": "Prove non-founders can sell",
+              "question": "Can non-founders sell this?",
+              "deliverables": [
+                "Founder sales playbook",
+                "Sales rep onboarding",
+                "Demo / discovery script",
+                "Objection handling guide",
+                "First non-founder sales attempts"
+              ],
+              "exit": "A non-founder can close customers without the founder driving every step."
+            },
+            {
+              "id": "2.3",
+              "name": "Make it scalable",
+              "question": "Does this scale?",
+              "deliverables": [
+                "Scalable sales process",
+                "CRM / pipeline structure",
+                "Handoff process",
+                "Reporting rhythm",
+                "Clear roles and responsibilities"
+              ],
+              "exit": "The sales motion keeps working as volume increases without creating chaos."
+            },
+            {
+              "id": "2.4",
+              "name": "Ensure customer success",
+              "question": "Can we scale without churn?",
+              "deliverables": [
+                "Onboarding process",
+                "Customer success checklist",
+                "Activation metric",
+                "Retention tracking",
+                "Churn reason log"
+              ],
+              "exit": "New customers consistently reach value, stay active, and do not churn faster as growth increases."
+            },
+            {
+              "id": "2.5",
+              "name": "Make it profitable",
+              "question": "Can we scale profitably?",
+              "deliverables": [
+                "Unit economics model",
+                "CAC / payback tracking",
+                "Margin analysis",
+                "Pricing validation",
+                "Channel profitability view"
+              ],
+              "exit": "Growth produces profitable revenue with acceptable acquisition cost, payback, and delivery margin."
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "n": 3,
+          "name": "Scaling the business",
+          "meta": "expansion",
+          "color": "#22C55E",
+          "expanded": false,
+          "gate": "Locked until repeatable + profitable sales motion proven.",
+          "subs": [
+            {
+              "id": "3.1",
+              "name": "Hit the gas & scale",
+              "question": "Does this keep scaling when we hit the gas?",
+              "deliverables": [
+                "Growth budget",
+                "Hiring plan",
+                "Channel scaling plan",
+                "Weekly growth targets",
+                "Operating dashboard"
+              ],
+              "exit": "Increasing resources creates more growth without breaking the sales, product, or delivery system."
+            },
+            {
+              "id": "3.2",
+              "name": "Scale the organization & processes",
+              "question": "Can the organization handle the growth?",
+              "deliverables": [
+                "Org structure",
+                "Leadership responsibilities",
+                "Operating cadence",
+                "Process documentation",
+                "KPI ownership"
+              ],
+              "exit": "The business can operate predictably without every important decision flowing through the founder."
+            },
+            {
+              "id": "3.3",
+              "name": "Expand internationally",
+              "question": "Can this work in new markets?",
+              "deliverables": [
+                "Market selection criteria",
+                "Localization plan",
+                "Country-specific GTM test",
+                "Local partner / sales approach",
+                "Expansion scorecard"
+              ],
+              "exit": "At least one new market shows early repeatability without requiring a completely new business model."
+            },
+            {
+              "id": "3.4",
+              "name": "Add additional product lines",
+              "question": "Can we expand the product without losing focus?",
+              "deliverables": [
+                "Expansion opportunity map",
+                "Customer demand evidence",
+                "Product line hypothesis",
+                "Pricing / packaging test",
+                "Cross-sell motion"
+              ],
+              "exit": "A new product line creates additional revenue from the existing customer base without weakening the core business."
+            }
+          ]
+        }
+      ],
+      "badge": null
+    }
+  }
+}

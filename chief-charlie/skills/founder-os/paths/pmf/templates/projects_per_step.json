@@ -1,0 +1,355 @@
+{
+  "schema_version": 1,
+  "_doc": "Canonical default projects per PMF step. Loaded into dashboard_data.data.projects at onboarding (for start step) and at phase-change (additive for new step). Personalized by the agent based on business_profile.industry / .buyer / .product_description. Mirrors kpis_per_step.json structure. Each step has 5–7 projects designed to (a) advance the step's mainGoal and (b) work against the canonical bottlenecks in roadmap_defaults.json. Each project also carries 2–3 anchor `tasks` (deterministic, structural — the agent appends 1–2 user-tailored tasks at write time based on business_profile + step_debrief). At write time the agent adds `n` (1-indexed), `status: 'later'` (or 'current' for the obviously first project), and `step: '<sub_id>'`.",
+  "steps": {
+    "1.1": {
+      "projects": [
+        {
+          "title": "Run 15 problem interviews with engaged-user candidates",
+          "outcome": "Documented notes from 15 interviews with cold-outreached prospects (not friends)",
+          "goal": "5 verbatim quotes that pass the Mom Test",
+          "why": "Engaged-user sample is the only way to find real pain — friends and family produce politeness yeses",
+          "tasks": [
+            "Draft an interview guide with 7 past-behavior questions (no hypotheticals)",
+            "Build a candidate list of 30 cold prospects matching the engaged-user profile",
+            "Log every interview in a single shared doc with date, name, and 3 key quotes"
+          ]
+        },
+        {
+          "title": "Document 5 verbatim user quotes proving the problem exists",
+          "outcome": "5 dated quotes with name and source in a single document, ready to share",
+          "goal": "Convert evidence in your head into shareable proof",
+          "why": "Quotes in your head don't count — written evidence is what convinces you, investors and future hires",
+          "tasks": [
+            "Create a quotes doc with columns: quote, name, role, date, source interview",
+            "Review existing interview notes and extract every direct pain-quote",
+            "Filter to the 5 strongest quotes naming pain, frequency, and workaround"
+          ]
+        },
+        {
+          "title": "Master the Mom Test interview style",
+          "outcome": "A 1-page cheat sheet of allowed and forbidden questions above your desk",
+          "goal": "Stop leading questions from producing fake validation",
+          "why": "Leading questions (\"would X be useful?\") produce noise — only past-behavior questions surface real pain",
+          "tasks": [
+            "Read or re-read The Mom Test (focus on chapters 1–3) and take 1 page of notes",
+            "Write a 1-page cheat sheet: 5 allowed questions, 5 forbidden questions",
+            "Record one practice interview and audit it against the cheat sheet"
+          ]
+        },
+        {
+          "title": "Write your founder-market-fit statement",
+          "outcome": "One paragraph answering why YOU, why THIS market, for the next 10 years",
+          "goal": "A 1-sentence statement you can say without hesitation",
+          "why": "Without a clear personal answer you will quit when the problem gets hard — which it will",
+          "tasks": [
+            "Brainstorm 3 personal reasons why this market matters to you for 10 years",
+            "Draft a 1-paragraph founder-market-fit statement and read it out loud"
+          ]
+        },
+        {
+          "title": "Build an engaged-user pipeline via cold outreach",
+          "outcome": "30+ LinkedIn or community connections of people actively dealing with the problem",
+          "goal": "A pipeline that produces 5 new interviews per week",
+          "why": "Pipeline is the difference between 15 real interviews and 5 polite chats with friends",
+          "tasks": [
+            "Write a 3-line outreach message that names the problem and asks for 20 minutes",
+            "Build a tracking sheet: name, channel, sent date, replied, booked, completed",
+            "Send 10 cold outreach messages per day for 2 weeks and log every reply"
+          ]
+        },
+        {
+          "title": "Find and study 3 existing workarounds users have built",
+          "outcome": "Documentation of the spreadsheets, scripts and manual hacks users use today",
+          "goal": "Proof that pain is real and someone is paying to avoid it",
+          "why": "Existing workarounds are the strongest signal that pain is real and willingness-to-pay exists",
+          "tasks": [
+            "Ask every interviewee: \"show me what you use today to solve this\"",
+            "Capture 3 user-built workarounds as screenshots (sheet, script, or hack)",
+            "Write a 1-page summary: what each workaround does, costs, and fails at"
+          ]
+        }
+      ]
+    },
+    "1.2": {
+      "projects": [
+        {
+          "title": "Define MVP scope in 1 page (3–5 core features)",
+          "outcome": "A scope doc you could hand to a stranger to build",
+          "goal": "A locked scope before you write a line of code",
+          "why": "Scope creep is the #1 reason MVPs ship late — write it down before you build",
+          "tasks": [
+            "List every feature idea and rank by user-pain evidence from 1.1 interviews",
+            "Cut the list to 3–5 features that solve the single sharpest pain",
+            "Write the 1-page scope doc and circulate to 1 trusted advisor for a sanity check"
+          ]
+        },
+        {
+          "title": "Ship a fake-it MVP using no-code (Zapier / Airtable / Sheets)",
+          "outcome": "A live URL or shared workspace users can interact with",
+          "goal": "Users in the product within 2 weeks",
+          "why": "Speed-to-market beats code quality — every week of building without users is a week of guessing",
+          "tasks": [
+            "Pick the no-code stack (Airtable / Zapier / Softr) and set up the workspace",
+            "Build the happy-path flow for the #1 use case (skip edge cases for now)",
+            "Send the live link to 1 friendly user and watch them complete the flow"
+          ]
+        },
+        {
+          "title": "Recruit 5 founding users with cold-outreach scripts",
+          "outcome": "5 users who agreed in writing to try the MVP and give weekly feedback",
+          "goal": "A user count, not a sign-up count",
+          "why": "5 committed users beat 50 sign-ups who never log in",
+          "tasks": [
+            "Draft a founding-user pitch: what they get, what you ask (8 weeks of feedback)",
+            "Reach out to 20 candidates and track yes/no/maybe in a sheet",
+            "Get written commitment (email or DM) from 5 users before granting access"
+          ]
+        },
+        {
+          "title": "Set up a Slack or email channel with founding users",
+          "outcome": "A shared space where users report friction in real time",
+          "goal": "Continuous feedback, not scheduled feedback bursts",
+          "why": "User feedback should flow daily — weekly cadence is already too slow this early",
+          "tasks": [
+            "Create the channel (Slack / Discord / email thread) and invite the 5 users",
+            "Post a kickoff message naming the cadence: report any friction same-day",
+            "Respond to every message within 2 hours for the first 2 weeks"
+          ]
+        },
+        {
+          "title": "Instrument basic usage tracking (PostHog / Plausible / Sheet)",
+          "outcome": "A dashboard showing sessions, feature usage, drop-off per user",
+          "goal": "Numbers, not narrative",
+          "why": "Without numbers you'll bias toward the user who complained loudest, not the data",
+          "tasks": [
+            "Pick a tracking tool (PostHog free / Plausible / a simple sheet) and install it",
+            "Define and instrument 3 key events: signup, first-action, return-visit",
+            "Build a 1-page dashboard reviewed every Friday"
+          ]
+        },
+        {
+          "title": "Run a post-launch friction debrief after 2 weeks",
+          "outcome": "A 1-page report listing what users actually tried and where they dropped off",
+          "goal": "Turn launch into a learning machine",
+          "why": "The post-launch debrief is what turns the MVP from a build into a learning machine",
+          "tasks": [
+            "Schedule a 30-min retro on day 14 post-launch with the founding-user data ready",
+            "Cross-reference usage data with channel feedback for the top 3 friction points",
+            "Write the 1-page debrief: what worked, what broke, what you'll change in week 3"
+          ]
+        }
+      ]
+    },
+    "1.3": {
+      "projects": [
+        {
+          "title": "Run observation sessions with 10 users over 2 weeks",
+          "outcome": "Session notes for 20 sessions (2 per user) — what they tried, where they stuck",
+          "goal": "Behavior data, not interview data",
+          "why": "Observation beats interviews — users say one thing and do another",
+          "tasks": [
+            "Build a session-note template: timestamp, action, friction, quote, screen",
+            "Schedule 20 sessions (2 per user) across a 2-week window",
+            "Run each session screen-shared, stay silent, take notes — never lead the user"
+          ]
+        },
+        {
+          "title": "Map 3 core friction patterns from observation notes",
+          "outcome": "A document naming each pattern with the quote and screen evidence",
+          "goal": "3 patterns, not 30 issues",
+          "why": "Patterns turn 20 sessions of noise into 3 actionable signals",
+          "tasks": [
+            "Re-read all 20 session notes and tag each friction with a 1-word category",
+            "Group categories into 3 dominant patterns with 4+ supporting observations each",
+            "Document each pattern: name, 1 quote, 1 screenshot, recommended next step"
+          ]
+        },
+        {
+          "title": "Build a weekly engagement tracker (Airtable / Sheets)",
+          "outcome": "A grid showing sessions, key actions, churn signals per user per week",
+          "goal": "Leading indicators, weekly",
+          "why": "Engagement is the leading indicator of PMF — track it before churn shows up",
+          "tasks": [
+            "List the 3 key actions that signal engagement for your product",
+            "Build a sheet with 1 row per user, 1 column per week, cells for action counts",
+            "Set a Friday 30-min review block to update the grid and flag drops"
+          ]
+        },
+        {
+          "title": "Create user archetype v1 from observation",
+          "outcome": "A 1-page description of who your engaged users are and what's sticky",
+          "goal": "A sharp profile of who you build for",
+          "why": "Without an archetype you optimize for the loudest voice, not the most valuable one",
+          "tasks": [
+            "Rank the 10 users by engagement and identify the top 3 most-engaged",
+            "List what the top 3 have in common: role, company size, trigger, frequency",
+            "Write the 1-page archetype doc and pin it visible to the team"
+          ]
+        },
+        {
+          "title": "Run weekly founder office hours with all 10 users",
+          "outcome": "A 30-min weekly sync that keeps users engaged and surfaces new friction",
+          "goal": "High-touch retention this stage",
+          "why": "Founder-touch is the cheapest retention tool you have at this stage",
+          "tasks": [
+            "Pick a recurring 30-min weekly slot and send calendar invites to all 10 users",
+            "Build a 3-question agenda: what worked, what broke, what's missing",
+            "Post a 3-line recap after every session in the shared channel"
+          ]
+        },
+        {
+          "title": "Prioritize top 3 product hypotheses for the next 30 days",
+          "outcome": "A backlog of 3 ranked hypotheses with user-evidence for each",
+          "goal": "Focus by exclusion",
+          "why": "A backlog of 3 forces you NOT to build the next ten random ideas",
+          "tasks": [
+            "List every product idea raised in the last 30 days from any source",
+            "Score each idea by user-evidence count and impact-on-engagement",
+            "Pick the top 3, write the hypothesis for each, archive the rest in a parking lot"
+          ]
+        }
+      ]
+    },
+    "1.4": {
+      "projects": [
+        {
+          "title": "Run Sean Ellis PMF survey with all engaged users",
+          "outcome": "Raw survey results with V/S/N split and calculated %Very Disappointed",
+          "goal": "A number, not a vibe",
+          "why": "Sean Ellis is the canonical PMF question — without it you're guessing",
+          "tasks": [
+            "Set up the Sean Ellis survey (Typeform / Form) with the canonical 4 questions",
+            "Send to every user who has used the product in the last 2 weeks",
+            "Calculate %Very Disappointed and log raw V/S/N counts in a shared doc"
+          ]
+        },
+        {
+          "title": "Build a V/S/N segmentation matrix",
+          "outcome": "A pivot showing which user archetypes give V vs S vs N",
+          "goal": "Per-segment PMF, not a global average",
+          "why": "One global PMF score hides which segment you should double down on",
+          "tasks": [
+            "Tag each respondent with their archetype, role, and primary use case",
+            "Build a pivot: rows = segment, columns = V/S/N counts and % Very Disappointed",
+            "Identify the segment with highest % Very Disappointed and write a 3-line memo"
+          ]
+        },
+        {
+          "title": "Interview 3 Very Disappointed users in depth",
+          "outcome": "Documented reasons why these users would miss your product",
+          "goal": "Articulate what they cling to",
+          "why": "The V segment IS your product — understand what they cling to before you change anything",
+          "tasks": [
+            "Pick 3 Very Disappointed users with different archetypes if possible",
+            "Run 45-min interviews on: what would you replace it with, what would you lose",
+            "Document the 3 answers verbatim plus what each user would miss most"
+          ]
+        },
+        {
+          "title": "Define the favorite-user persona with 5 mandatory fields",
+          "outcome": "Persona doc: role, problem solved, usage frequency, growth trajectory, willingness to pay",
+          "goal": "A single target for marketing, sales and product",
+          "why": "Without a sharp persona, marketing, sales and product all aim at different targets",
+          "tasks": [
+            "Pull the 5 fields from your V-segment data and find the modal value for each",
+            "Write the persona doc as a single named character (e.g. \"Maria, Head of Ops\")",
+            "Share the persona with 1 customer-facing person and have them stress-test it"
+          ]
+        },
+        {
+          "title": "Benchmark your score against the 40% PMF bar",
+          "outcome": "A written analysis: where you are, what the gap is, what closes it",
+          "goal": "Honest distance to PMF",
+          "why": "Benchmarks anchor expectations — 25% is honest progress, not failure",
+          "tasks": [
+            "Compute the gap: current % Very Disappointed minus 40%",
+            "List 3 specific actions (feature, segment, message) that could close the gap",
+            "Write a 1-page honest assessment naming where you are and what's next"
+          ]
+        },
+        {
+          "title": "Document 3 fanatic patterns from V-segment users",
+          "outcome": "Notes on what V-users do, say and feel that other users don't",
+          "goal": "Inputs for the 1.5 doubling-down phase",
+          "why": "Fanatic patterns become the 1.5 doubling-down targets — capture them now",
+          "tasks": [
+            "Re-read the 3 V-segment interviews and tag every behavior unique to V-users",
+            "Group behaviors into 3 patterns with at least 2 supporting examples each",
+            "Document each pattern with 1 quote and a candidate doubling-down move"
+          ]
+        }
+      ]
+    },
+    "1.5": {
+      "projects": [
+        {
+          "title": "Double down on your #1 fanatic pattern with 3 feature builds",
+          "outcome": "3 shipped improvements that deepen what V-users already love",
+          "goal": "Widen the moat for the segment you already won",
+          "why": "Doubling-down extends your moat — features Hopeful users want are not moats yet",
+          "tasks": [
+            "Pick the #1 fanatic pattern from 1.4 and brainstorm 5 ways to deepen it",
+            "Scope the top 3 as 1–2 week shippable units with clear acceptance criteria",
+            "Ship one per 2-week cycle and track V-user engagement on the relevant action"
+          ]
+        },
+        {
+          "title": "Run validation interviews after each ship (5 users per feature)",
+          "outcome": "15 interviews documenting whether the feature actually deepens love",
+          "goal": "Shipped + validated, not shipped",
+          "why": "Shipping without measurement turns 1.5 into feature-zoo theatre",
+          "tasks": [
+            "Build a 5-question script around \"would you miss this if it disappeared\"",
+            "Run 5 interviews within 14 days of each ship and log answers in a shared doc",
+            "Summarize each cohort: % who notice, % who care, % who would miss it"
+          ]
+        },
+        {
+          "title": "Identify and unblock 3 Hopeful users monthly",
+          "outcome": "3 interventions (feature, process or pivot) to convert Hopeful → Very Disappointed",
+          "goal": "Convert the cheapest tier of upside",
+          "why": "Hopeful users are the second-cheapest segment to convert if you fix their blocker",
+          "tasks": [
+            "Filter survey results for the \"somewhat disappointed\" segment and pick 3 users",
+            "Interview each about the single blocker that prevents them from becoming V",
+            "Ship one targeted intervention per user and re-survey 30 days later"
+          ]
+        },
+        {
+          "title": "Measure Sean Ellis monthly (2 consecutive months ≥40%)",
+          "outcome": "2 monthly survey results showing upward or stable trajectory ≥40%",
+          "goal": "Two ≥40% in a row, not one lucky reading",
+          "why": "One survey ≥40% is luck — two consecutive proves PMF",
+          "tasks": [
+            "Set a recurring monthly calendar block for survey send + analysis",
+            "Send the survey on the same day each month to all active users",
+            "Plot the score trendline in a shared sheet and review with the team monthly"
+          ]
+        },
+        {
+          "title": "Document weekly 50/50 doubling-down vs unblocking decisions",
+          "outcome": "A weekly log of which users and features got focus and why",
+          "goal": "Explicit allocation, not drift",
+          "why": "Without explicit splitting you'll drift to one side and stall the other",
+          "tasks": [
+            "Create a weekly allocation log: 1 column for doubling-down, 1 for unblocking",
+            "Every Friday log what each side actually consumed in hours and what shipped",
+            "Review monthly and rebalance if one side drifted below 30% of total effort"
+          ]
+        },
+        {
+          "title": "Run a cohort retention analysis (8-week window)",
+          "outcome": "A grid showing % of month-1 users still active in weeks 5–8",
+          "goal": "Retention as PMF confirmation",
+          "why": "Retention is the lagging proof of PMF — Sean Ellis is the leading proof",
+          "tasks": [
+            "Pull a list of users who signed up 8+ weeks ago and tag their signup-week cohort",
+            "Build the retention grid: rows = cohort, columns = wks 1–8, cell = % active",
+            "Write a 1-page read-out naming flat-line week (the start of true retention)"
+          ]
+        }
+      ]
+    }
+  }
+}

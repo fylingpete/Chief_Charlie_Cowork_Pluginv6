@@ -1,0 +1,649 @@
+{
+  "schema_version": 1,
+  "steps": {
+    "1.1": {
+      "overview": {
+        "whyThisStep": "Bevor du irgendwas baust, musst du wissen, ob das Problem real ist und ob du der richtige Founder dafür bist. Wer hier abkürzt, baut Wochen später eine schöne Lösung für ein Problem, das niemanden interessiert. Erst Problem schärfen, dann MVP — nicht umgekehrt.",
+        "deepenPrompt": "Vertiefe Step 1.1 — Problem & Founder-Fit mit mir. Wie führe ich Problem-Interviews ohne Leading Questions und woran erkenne ich echten Founder-Market-Fit?",
+        "mainGoal": "Ein validiertes Problem mit mindestens 5 unabhängigen User-Quotes und ein klares Founder-Market-Fit-Statement, warum genau du das angehst.",
+        "mainQuestion": "Bin ich der richtige Founder für ein echtes Problem — und habe ich Beweise dafür, dass es überhaupt ein Problem ist?",
+        "whatMatters": [
+          { "icon": "compass", "label": "Founder-Market-Fit" },
+          { "icon": "users", "label": "Echte User-Quotes" },
+          { "icon": "spark", "label": "Schmerz, kein Wunsch" },
+          { "icon": "target", "label": "Solution-Hypothese" }
+        ],
+        "readyWhen": [
+          "5–10 Problem-Interviews mit echten Engaged-User-Kandidaten gelaufen.",
+          "Mindestens 5 unabhängige Problem-Quotes im Mom-Test-Stil dokumentiert.",
+          "Founder-Market-Fit-Statement steht — du kannst in einem Satz sagen, warum DU.",
+          "Solution-Hypothese in einem Satz formuliert."
+        ]
+      },
+      "bottlenecks": [
+        {
+          "category": "Idee",
+          "bottleneck": "Du verliebst dich in deine Lösung, bevor du das Problem verstanden hast. Jedes Interview wird zur Demo.",
+          "advanceLabel": "Zurück zum Problem →",
+          "advance": "Du hörst zuerst zu. Das Problem steht in den Worten der User, nicht in deinen Slides."
+        },
+        {
+          "category": "Interviews",
+          "bottleneck": "Deine Fragen sind führend: „Wäre ein Tool, das X macht, hilfreich?\". Das produziert Höflichkeits-Yeses.",
+          "advanceLabel": "Mom Test übernehmen →",
+          "advance": "Du fragst nach konkreten letzten Vorfällen, nie nach Hypothesen. Antworten haben Datum, Zahlen, echte Personen."
+        },
+        {
+          "category": "Sample",
+          "bottleneck": "Du sprichst mit Freunden und Family. Alle sind nett, niemand ist dein Zielkunde.",
+          "advanceLabel": "Engaged-User-Sample bauen →",
+          "advance": "Du sprichst mit Leuten, die das Problem gerade haben. Cold Outreach an LinkedIn-Profile, Communities, Slacks."
+        },
+        {
+          "category": "Founder-Fit",
+          "bottleneck": "Du wählst das Problem, weil es nach Markt aussieht — nicht, weil du davon nicht loskommst.",
+          "advanceLabel": "Founder-Fit artikulieren →",
+          "advance": "Du kannst in einem Satz sagen, warum DU das die nächsten 10 Jahre durchziehen kannst. Background, Schmerz, Zugang."
+        },
+        {
+          "category": "Dokumentation",
+          "bottleneck": "Quotes leben in deinem Kopf. Du erinnerst dich an „die meisten haben ja gesagt\".",
+          "advanceLabel": "Quotes wörtlich festhalten →",
+          "advance": "Jedes Quote steht wörtlich, mit Name und Datum, in einem File. Du kannst sie jemandem in 30 Sekunden zeigen."
+        }
+      ],
+      "keys": [
+        {
+          "tag": "Beobachte, frag nicht",
+          "bullets": [
+            "Frag nach dem letzten konkreten Vorfall, nicht nach Hypothesen",
+            "Lass den User reden — Stille ist okay",
+            "Notier wörtlich, nicht zusammengefasst"
+          ]
+        },
+        {
+          "tag": "Bleib in der Schmerzzone",
+          "bullets": [
+            "Wenn niemand schon eine Workaround-Lösung gebaut hat, ist der Schmerz zu klein",
+            "Ein „nice-to-have\" zählt nicht — such Workarounds, Frust, verlorene Zeit",
+            "Frag: „Was hast du letztes Mal gemacht, als das passiert ist?\""
+          ]
+        },
+        {
+          "tag": "Kill Leading Questions",
+          "bullets": [
+            "Keine „Wäre es nicht cool, wenn…\"-Fragen",
+            "Keine eigene Lösung pitchen, bevor du das Problem geklärt hast",
+            "Lies den Mom Test, bevor du das nächste Interview führst"
+          ]
+        },
+        {
+          "tag": "Founder-Market-Fit ehrlich prüfen",
+          "bullets": [
+            "Warum DU? Background, Zugang, persönlicher Schmerz",
+            "Hältst du das 10 Jahre durch, wenn es weh tut?",
+            "Wenn die Antwort weak ist — anderes Problem suchen"
+          ]
+        },
+        {
+          "tag": "Halte alles schriftlich fest",
+          "bullets": [
+            "Wörtliche Quotes mit Name + Datum",
+            "Solution-Hypothese in einem Satz, nicht einem Absatz",
+            "YC 10-Fragen-Idea-Eval beantwortet, nicht überflogen"
+          ]
+        }
+      ],
+      "deliverables": [
+        "YC 10-Fragen-Idea-Eval beantwortet",
+        "Founder-Market-Fit-Statement (warum DU) in einem Satz",
+        "5–10 Problem-Interviews mit Engaged-User-Sample geführt",
+        "Mindestens 5 unabhängige Problem-Quotes wörtlich dokumentiert",
+        "Solution-Hypothese in einem Satz formuliert"
+      ],
+      "sources": [
+        {
+          "initials": "YC",
+          "name": "Y Combinator",
+          "subtitle": "Idea Evaluation · Idea Generation",
+          "color": "#D85A30",
+          "prompt": "Erzähle mir mehr über Y Combinator und wie sie Ideen evaluieren und generieren im Kontext von Step 1.1 — Problem & Founder-Fit."
+        },
+        {
+          "initials": "RF",
+          "name": "Rob Fitzpatrick",
+          "subtitle": "The Mom Test",
+          "color": "#1D9E75",
+          "prompt": "Erzähle mir mehr über Rob Fitzpatrick und The Mom Test im Kontext von Step 1.1 — Problem & Founder-Fit."
+        },
+        {
+          "initials": "PG",
+          "name": "Paul Graham",
+          "subtitle": "Founder-Market-Fit Essays",
+          "color": "#378ADD",
+          "prompt": "Erzähle mir mehr über Paul Grahams Essays zu Founder-Market-Fit im Kontext von Step 1.1 — Problem & Founder-Fit."
+        },
+        {
+          "initials": "SE",
+          "name": "Sean Ellis",
+          "subtitle": "PMF beginnt mit Problem",
+          "color": "#534AB7",
+          "prompt": "Erzähle mir mehr über Sean Ellis und warum PMF mit dem Problem beginnt im Kontext von Step 1.1 — Problem & Founder-Fit."
+        }
+      ]
+    },
+    "1.2": {
+      "overview": {
+        "whyThisStep": "Du hast ein validiertes Problem — jetzt brauchst du das kleinstmögliche Ding, das es löst. In der AI-Ära kannst du einen MVP an einem Tag bauen; der Hebel liegt nicht in der Geschwindigkeit, sondern im radikalen Streichen auf das Wesentliche. Alles, was nicht direkt am Wow-Moment hängt, kostet dich Lerngeschwindigkeit.",
+        "deepenPrompt": "Vertiefe Step 1.2 — MVP scope & build mit mir. Wie streiche ich auf 5–10 Features und wo ist die Grenze zwischen hacky und broken?",
+        "mainGoal": "Ein live MVP — manuell, hacky oder fake-it-with-Google-Forms ist okay — den mindestens 3 echte User ohne Founder-Hand-Holding nutzen.",
+        "mainQuestion": "Was ist die kleinste Version, die das Problem wirklich löst — und was schmeiß ich raus, ohne Bauchschmerzen?",
+        "whatMatters": [
+          { "icon": "target", "label": "Radikales Streichen" },
+          { "icon": "spark", "label": "Wow-Moment" },
+          { "icon": "check", "label": "Live, nicht perfekt" },
+          { "icon": "users", "label": "3 echte User" }
+        ],
+        "readyWhen": [
+          "Feature-Liste auf maximal 5–10 gestrichen — Non-Features explizit ausgeschlossen.",
+          "MVP ist live (auch manual / hacky / Zapier-Spaghetti zählt).",
+          "Mindestens 3 echte User nutzen es ohne deine Hilfe.",
+          "Feedback-Mechanismus aktiv (Email, Form, oder Direkt-Kontakt)."
+        ]
+      },
+      "bottlenecks": [
+        {
+          "category": "Scope",
+          "bottleneck": "Du baust 25 Features, weil sie alle „wichtig\" wirken. Nichts davon ist fertig.",
+          "advanceLabel": "Auf 5–10 streichen →",
+          "advance": "Du hast eine harte Liste mit max 10 Features. Alles andere steht explizit auf der Non-Feature-Liste."
+        },
+        {
+          "category": "Polish",
+          "bottleneck": "Du polierst UI und Edge Cases, bevor irgendjemand das Ding genutzt hat.",
+          "advanceLabel": "Hacky shippen →",
+          "advance": "MVP ist live, auch wenn es hässlich ist. Manual Backend, Google Form als Frontend, copy-paste — alles erlaubt."
+        },
+        {
+          "category": "Wow-Moment",
+          "bottleneck": "Es gibt keinen klaren Moment, in dem der User „aha\" sagt. Das Produkt ist Feature-Salat.",
+          "advanceLabel": "Wow-Moment isolieren →",
+          "advance": "Ein User-Flow führt in unter 2 Minuten zum Wow. Alles, was nicht dort hinleitet, fliegt raus."
+        },
+        {
+          "category": "Feedback",
+          "bottleneck": "User nutzen das Ding, aber du hast keinen Kanal, um zu hören, was schiefgeht.",
+          "advanceLabel": "Feedback-Loop einbauen →",
+          "advance": "Jeder User kann dich in 1 Klick erreichen. Du siehst Bugs und Friction, sobald sie passieren."
+        },
+        {
+          "category": "Hand-Holding",
+          "bottleneck": "Das Onboarding läuft nur, wenn du persönlich daneben sitzt. Self-Serve ist Theorie.",
+          "advanceLabel": "Onboarding self-serve →",
+          "advance": "3 User schaffen den Wow-Moment, ohne dass du im Call bist. Du siehst den Flow im Log, nicht im Zoom."
+        }
+      ],
+      "keys": [
+        {
+          "tag": "Streichen ist die Arbeit",
+          "bullets": [
+            "Jedes Feature muss am Wow-Moment hängen",
+            "Schreib eine explizite Non-Feature-Liste",
+            "Wenn du zögerst, fliegt es raus"
+          ]
+        },
+        {
+          "tag": "Manual ist okay",
+          "bullets": [
+            "Backend kann ein Google Sheet sein",
+            "Du selbst kannst der Algorithmus sein",
+            "Hacky shippen schlägt elegant nicht-shippen"
+          ]
+        },
+        {
+          "tag": "Bau für den Wow-Moment",
+          "bullets": [
+            "Einen klaren User-Flow zur Aha-Erfahrung",
+            "Unter 2 Minuten vom Login zum Value",
+            "Alles andere schiebt das Lernen nach hinten"
+          ]
+        },
+        {
+          "tag": "Feedback-Kanal von Tag 1",
+          "bullets": [
+            "Email, Intercom, Slack — egal, Hauptsache offen",
+            "Antworte selbst, nicht via Support",
+            "Bugs sind Geschenke, keine Peinlichkeiten"
+          ]
+        },
+        {
+          "tag": "Continuous Launching",
+          "bullets": [
+            "Launch ist kein Event, es ist ein Rhythmus",
+            "Jede Woche ein Update an die User",
+            "Sichtbar bleiben schlägt perfekt sein"
+          ]
+        }
+      ],
+      "deliverables": [
+        "Feature-Liste auf maximal 5–10 gestrichen",
+        "Non-Features explizit ausgeschlossen und schriftlich festgehalten",
+        "MVP live (manual / hacky / fake-it-with-Google-Forms ist okay)",
+        "Feedback-Mechanismus aktiv (Email, Form, Direkt-Kontakt)",
+        "Mindestens 3 echte User nutzen es ohne Founder-Hand-Holding"
+      ],
+      "sources": [
+        {
+          "initials": "YC",
+          "name": "Y Combinator",
+          "subtitle": "Building MVP · Continuous Launching",
+          "color": "#D85A30",
+          "prompt": "Erzähle mir mehr über Y Combinator und ihren Ansatz für MVP-Building und Continuous Launching im Kontext von Step 1.2 — MVP scope & build."
+        },
+        {
+          "initials": "PG",
+          "name": "Paul Graham",
+          "subtitle": "Do Things That Don't Scale",
+          "color": "#378ADD",
+          "prompt": "Erzähle mir mehr über Paul Graham und Do Things That Don't Scale im Kontext von Step 1.2 — MVP scope & build."
+        },
+        {
+          "initials": "SE",
+          "name": "Sean Ellis",
+          "subtitle": "Erst shippen, dann messen",
+          "color": "#534AB7",
+          "prompt": "Erzähle mir mehr über Sean Ellis und warum Shippen vor Messen kommt im Kontext von Step 1.2 — MVP scope & build."
+        }
+      ]
+    },
+    "1.3": {
+      "overview": {
+        "whyThisStep": "Ohne aktive User hast du kein Produkt — du hast eine Demo. Die ersten 10 User kommen nicht durch Marketing, sondern weil du sie persönlich rekrutierst und durchschleifst. Hier lernst du aus Beobachtung, was User wirklich tun, nicht was sie sagen.",
+        "deepenPrompt": "Vertiefe Step 1.3 — Erste 10 User & Lernen mit mir. Wie rekrutiere ich manuell und woran erkenne ich echte Friktion-Patterns?",
+        "mainGoal": "Mindestens 10 engagierte User (2× sessions in 2 Wochen), drei dokumentierte Friktion-Patterns aus Beobachtung — nicht aus Selbstauskunft.",
+        "mainQuestion": "Kann ich 10–30 User manuell rekrutieren und aus ihrem Verhalten lernen, nicht aus ihren Worten?",
+        "whatMatters": [
+          { "icon": "users", "label": "10 engagierte User" },
+          { "icon": "engaged", "label": "Manuelle Recruitment" },
+          { "icon": "spark", "label": "Beobachtung > Worte" },
+          { "icon": "followup", "label": "Friktion-Patterns" }
+        ],
+        "readyWhen": [
+          "Mindestens 10 engagierte User aktiv (2× sessions in 2 Wochen).",
+          "Target-Customer-Liste mit Namen, LinkedIn, Email gepflegt.",
+          "Outreach-Log: wer kontaktiert, wann, welche Antwort.",
+          "Mindestens 3 Friktion-Patterns aus Session-Beobachtung dokumentiert."
+        ]
+      },
+      "bottlenecks": [
+        {
+          "category": "Outreach",
+          "bottleneck": "Du wartest auf inbound. Es kommt aber niemand, weil dich noch niemand kennt.",
+          "advanceLabel": "Manuell rekrutieren →",
+          "advance": "Du schreibst täglich 10–20 gezielte 1:1-Nachrichten. Outreach steht im Kalender, nicht in der to-do-Wolke."
+        },
+        {
+          "category": "Scale",
+          "bottleneck": "Du versuchst zu skalieren, bevor 10 User glücklich sind. Ads laufen, niemand bleibt.",
+          "advanceLabel": "Don't scale →",
+          "advance": "Du machst die unskalierbaren Sachen: persönliche Demos, manuelles Onboarding, Hand-delivered Setup."
+        },
+        {
+          "category": "Lernen",
+          "bottleneck": "Du fragst User, was sie wollen. Sie sagen, was höflich klingt, nicht was sie tun.",
+          "advanceLabel": "Sessions beobachten →",
+          "advance": "Du schaust beim Use zu (Session-Recording, Screen-Share, Calls). Friktion siehst du, du fragst sie nicht ab."
+        },
+        {
+          "category": "Care",
+          "bottleneck": "Bugs werden „später\" gefixt. User merken, dass sie nicht wichtig sind, und drehen ab.",
+          "advanceLabel": "Fanatisch kümmern →",
+          "advance": "Bug-Reports werden am selben Tag adressiert. Jeder User bekommt das Gefühl, er ist die wichtigste Person."
+        },
+        {
+          "category": "Ideal Customer",
+          "bottleneck": "Du nimmst jeden, der „interessant\" klingt. Lernsignal verwässert.",
+          "advanceLabel": "Auf einen ICP fokussieren →",
+          "advance": "Die ersten 10 User sehen sich verdammt ähnlich. Bad Fits sagst du aktiv ab, statt sie hinzuziehen."
+        }
+      ],
+      "keys": [
+        {
+          "tag": "Do things that don't scale",
+          "bullets": [
+            "Airbnb fotografierte Wohnungen selbst",
+            "Brex onboardete Founder aus dem eigenen YC-Batch",
+            "Twitch rief jeden frühen Streamer persönlich an"
+          ]
+        },
+        {
+          "tag": "Beobachte, frag nicht",
+          "bullets": [
+            "Session-Recordings schlagen Surveys",
+            "Wo zögert der User? Wo klickt er falsch?",
+            "Worte lügen, Verhalten nicht"
+          ]
+        },
+        {
+          "tag": "Care fanatisch",
+          "bullets": [
+            "Antwort in unter 2 Stunden, nicht 2 Tagen",
+            "Bug heute fixen, nicht im nächsten Sprint",
+            "Persönlich, nicht via Templates"
+          ]
+        },
+        {
+          "tag": "Ein ICP, nicht fünf",
+          "bullets": [
+            "Lieber 10 ähnliche User als 10 verschiedene",
+            "Bad Fits aktiv ablehnen",
+            "Lernsignal pro User-Typ stapeln"
+          ]
+        },
+        {
+          "tag": "Outreach im Kalender",
+          "bullets": [
+            "10–20 Nachrichten täglich, nicht „bei Gelegenheit\"",
+            "Personalisierung schlägt Volume",
+            "Log: wer, wann, Antwort, Status"
+          ]
+        }
+      ],
+      "deliverables": [
+        "Target-Customer-Liste (Namen, LinkedIn, Email)",
+        "Outreach-Log: wer kontaktiert, wann, welche Antwort",
+        "Mindestens 10 engagierte User (2× sessions in 2 Wochen)",
+        "Session-Notes pro User (was probiert, wo gestockt)",
+        "Mindestens 3 dokumentierte Friktion-Patterns (Blocker vs Nice-to-have)"
+      ],
+      "sources": [
+        {
+          "initials": "PG",
+          "name": "Paul Graham",
+          "subtitle": "Do Things That Don't Scale",
+          "color": "#378ADD",
+          "prompt": "Erzähle mir mehr über Paul Graham und Do Things That Don't Scale im Kontext von Step 1.3 — Erste 10 User & Lernen."
+        },
+        {
+          "initials": "YC",
+          "name": "Y Combinator",
+          "subtitle": "Care · Talk to Users",
+          "color": "#D85A30",
+          "prompt": "Erzähle mir mehr über Y Combinator und ihre Lehren zu Care About Customers und Talk to Users im Kontext von Step 1.3 — Erste 10 User & Lernen."
+        },
+        {
+          "initials": "RF",
+          "name": "Rob Fitzpatrick",
+          "subtitle": "The Mom Test · Beobachten",
+          "color": "#1D9E75",
+          "prompt": "Erzähle mir mehr über Rob Fitzpatrick und The Mom Test im Kontext von Step 1.3 — Erste 10 User & Lernen."
+        }
+      ]
+    },
+    "1.4": {
+      "overview": {
+        "whyThisStep": "Du hast User, aber du weißt noch nicht, ob das Produkt wirklich fehlen würde. Der Sean-Ellis-Score sagt dir genau das — und die „Very Disappointed\"-Antworten zeigen dir, wer dein Lieblings-User ist. Ohne diese Trennung baust du für alle und triffst niemanden.",
+        "deepenPrompt": "Vertiefe Step 1.4 — PMF-Score messen & Lieblings-User identifizieren mit mir. Wie laufe ich den Sean-Ellis-Test sauber und wie extrahiere ich daraus die Lieblings-User-Persona?",
+        "mainGoal": "Ein berechneter Sean-Ellis-Score, V/S/N-Segmentation-Sheet komplett, und eine Lieblings-User-Persona v1 mit 5 Pflichtfeldern aus den Very-Disappointed-Antworten.",
+        "mainQuestion": "Wie hoch ist mein PMF-Score und wer ist mein Lieblings-User — die Person, die ohne mein Produkt am meisten leiden würde?",
+        "whatMatters": [
+          { "icon": "target", "label": "Sean-Ellis-Rubrik" },
+          { "icon": "engaged", "label": "Nur engaged User" },
+          { "icon": "heart", "label": "Lieblings-User v1" },
+          { "icon": "check", "label": "V/S/N-Segmente" }
+        ],
+        "readyWhen": [
+          "Sean-Ellis-Score berechnet (≥15 Antworten directional, ≥40 benchmark-valid).",
+          "V/S/N-Segmentation-Sheet komplett ausgefüllt.",
+          "Lieblings-User-Persona v1 mit 5 Pflichtfeldern aus Very-Disappointed extrahiert.",
+          "Survey-Link nur an engaged User; Non-Responder manuell nachgefasst."
+        ]
+      },
+      "bottlenecks": [
+        {
+          "category": "Wording",
+          "bottleneck": "Du formulierst die Frage neu, weil sie „komisch klingt\". Damit zerstörst du die Vergleichbarkeit zum Benchmark.",
+          "advanceLabel": "Sean Ellis wortgleich →",
+          "advance": "Die 4 Fragen stehen wortgleich (How would you feel if you could no longer use this product?). Antworten sind benchmark-fähig."
+        },
+        {
+          "category": "Sample",
+          "bottleneck": "Survey geht an alle Signups. Cold Leads ziehen den Score nach unten.",
+          "advanceLabel": "Engaged-Filter hart →",
+          "advance": "Filter ist eine messbare Activity-Schwelle (z.B. 2× in 14 Tagen). Nur diese User bekommen den Link."
+        },
+        {
+          "category": "N",
+          "bottleneck": "Du hast 8 Antworten und ziehst harte Schlüsse. Statistisches Rauschen, kein Signal.",
+          "advanceLabel": "Auf ≥15 fahren →",
+          "advance": "Mindestens 15 Antworten für directional Read, ≥40 für benchmark-valid. Manual Follow-up bei Non-Respondern."
+        },
+        {
+          "category": "Persona",
+          "bottleneck": "Du extrahierst die Persona aus allen Antworten. Hopefuls und Not-Disappointed verwässern das Bild.",
+          "advanceLabel": "Nur Very Disappointed →",
+          "advance": "Persona kommt ausschließlich aus Very-Disappointed-Antworten. 5 Pflichtfelder: Name, Rolle, Kontext, Hauptnutzen, Frustration."
+        },
+        {
+          "category": "Open Text",
+          "bottleneck": "Du liest die offenen Antworten überflogen. Die Goldnuggets bleiben unter dem Radar.",
+          "advanceLabel": "HXC-Patterns ziehen →",
+          "advance": "Du codierst jede offene Antwort. Wiederkehrende Worte, Job-to-be-Done und Frustrationen werden zu HXC-Hypothesen."
+        }
+      ],
+      "keys": [
+        {
+          "tag": "4 Fragen, kanonisch",
+          "bullets": [
+            "How would you feel if you could no longer use this product?",
+            "What type of people would benefit most?",
+            "What is the main benefit you receive?",
+            "How can we improve it for you?"
+          ]
+        },
+        {
+          "tag": "Engaged definieren, nicht raten",
+          "bullets": [
+            "Eine messbare Activity-Schwelle (z.B. 2× in 14 Tagen)",
+            "Schreib sie in pmf-survey.md auf",
+            "30-Tage-Window minimum"
+          ]
+        },
+        {
+          "tag": "V/S/N segmentieren",
+          "bullets": [
+            "V = Very Disappointed → 40%-Benchmark",
+            "S = Somewhat → Hopefuls, oft mit konkreten Blockern",
+            "N = Not Disappointed → wertvolles Segment, das du oft nicht willst"
+          ]
+        },
+        {
+          "tag": "Lieblings-User aus V",
+          "bullets": [
+            "5 Pflichtfelder: Name, Rolle, Kontext, Hauptnutzen, Frustration",
+            "Patterns suchen, nicht Einzelantworten zitieren",
+            "Persona darf weh tun — sie schließt explizit aus"
+          ]
+        },
+        {
+          "tag": "Score lesen, nicht feiern",
+          "bullets": [
+            "<25%: Produkt-Problem, nicht Marketing",
+            "25–40%: Iteration auf Hauptnutzen + Hopefuls",
+            "≥40%: Benchmark erreicht — Doubling-Down beginnt"
+          ]
+        }
+      ],
+      "deliverables": [
+        "4-Frage-Sean-Ellis-Survey live (Google Form), wortgleich zur kanonischen Fassung",
+        "Engaged-User-Filter dokumentiert (z.B. 2× in 14 Tagen)",
+        "Survey-Link nur an engaged User, Non-Responder manuell nachgefasst",
+        "Sean-Ellis-Score berechnet (% Very Disappointed)",
+        "V/S/N-Segmentation-Sheet komplett",
+        "Lieblings-User-Persona v1 mit 5 Pflichtfeldern aus Very-Disappointed extrahiert"
+      ],
+      "sources": [
+        {
+          "initials": "SE",
+          "name": "Sean Ellis",
+          "subtitle": "PMF Score · 40% rule",
+          "color": "#534AB7",
+          "prompt": "Erzähle mir mehr über Sean Ellis und den PMF-Score mit der 40%-Regel im Kontext von Step 1.4 — PMF-Score messen & Lieblings-User identifizieren."
+        },
+        {
+          "initials": "FR",
+          "name": "First Round",
+          "subtitle": "Superhuman PMF Engine",
+          "color": "#378ADD",
+          "prompt": "Erzähle mir mehr über First Round und die Superhuman PMF Engine im Kontext von Step 1.4 — PMF-Score messen & Lieblings-User identifizieren."
+        },
+        {
+          "initials": "YC",
+          "name": "Y Combinator",
+          "subtitle": "Measuring PMF",
+          "color": "#D85A30",
+          "prompt": "Erzähle mir mehr über Y Combinator und Measuring Product-Market Fit im Kontext von Step 1.4 — PMF-Score messen & Lieblings-User identifizieren."
+        },
+        {
+          "initials": "HXC",
+          "name": "HXC Framework",
+          "subtitle": "High-Expectation Customer",
+          "color": "#1D9E75",
+          "prompt": "Erzähle mir mehr über das HXC-Framework und den High-Expectation Customer im Kontext von Step 1.4 — PMF-Score messen & Lieblings-User identifizieren."
+        }
+      ]
+    },
+    "1.5": {
+      "overview": {
+        "whyThisStep": "Ein Score unter 40% heißt nicht, dass du gescheitert bist — er sagt nur, dass du jetzt gezielt iterieren musst. Der 50/50-Roadmap-Split (Doubling-Down auf Fanatics + Unblocking der Hopefuls) ist der einzige Modus, der den Score systematisch hebt. Ohne diesen Rhythmus driftest du in Feature-Salat zurück.",
+        "deepenPrompt": "Vertiefe Step 1.5 — Verbessern bis User dein Produkt nicht mehr missen wollen mit mir. Wie spliten wir die Roadmap 50/50 und welche Cadence brauche ich Weekly/Monthly/Quarterly?",
+        "mainGoal": "Sean-Ellis-Score ≥40% in zwei aufeinanderfolgenden Monatsmessungen — erreicht durch 50/50-Split aus Doubling-Down und Unblocking, gefahren in Weekly/Monthly/Quarterly-Rhythmus.",
+        "mainQuestion": "Habe ich echtes Product/Market Fit erreicht — und kann ich es zwei Monate in Folge messen?",
+        "whatMatters": [
+          { "icon": "target", "label": "50/50 Roadmap-Split" },
+          { "icon": "heart", "label": "Doubling-Down" },
+          { "icon": "spark", "label": "Hopefuls unblocken" },
+          { "icon": "check", "label": "≥40% in 2 Monaten" }
+        ],
+        "readyWhen": [
+          "Sean-Ellis-Score ≥40% in zwei aufeinanderfolgenden Monatsmessungen.",
+          "Doubling-Down- und Unblocking-Initiativen aktiv (≥5 + ≥5).",
+          "50/50-Split dokumentiert (Toleranz 40/60–60/40).",
+          "Weekly Check-In, Monthly Review und Quarterly Rebuild laufen als Rhythmus."
+        ]
+      },
+      "bottlenecks": [
+        {
+          "category": "Roadmap",
+          "bottleneck": "Du baust nur, was Hopefuls fordern. Fanatics werden nicht weiter beglückt — der Kern verwässert.",
+          "advanceLabel": "50/50 erzwingen →",
+          "advance": "Jede Woche steht 50% Doubling-Down (für Fanatics) und 50% Unblocking (für Hopefuls). Toleranz 40/60–60/40, nicht mehr."
+        },
+        {
+          "category": "Cadence",
+          "bottleneck": "Du iterierst ad hoc. Score wird nur dann gemessen, wenn jemand fragt.",
+          "advanceLabel": "Check-In / Measurement / Rebuild →",
+          "advance": "Weekly Check-In (Was tat sich? Was kommt?), Monthly Review (Score-Update), Quarterly Rebuild (Persona + Roadmap refreshen)."
+        },
+        {
+          "category": "Patterns",
+          "bottleneck": "Du arbeitest die User-Wünsche der lautesten Hopefuls ab. Patterns verdunsten.",
+          "advanceLabel": "Patterns extrahieren →",
+          "advance": "Fanatics: was lieben sie wirklich? Hopefuls: was ist der eine konkrete Blocker? Beides als Liste, nicht als Kommentarstrang."
+        },
+        {
+          "category": "Geduld",
+          "bottleneck": "Score springt von 28% auf 35%. Du feierst und reduzierst die Disziplin.",
+          "advanceLabel": "Bis 2× ≥40% halten →",
+          "advance": "Du hörst nicht auf, bis zwei Monatsmessungen in Folge ≥40% liefern. Eine Messung ist Lärm, zwei sind Signal."
+        },
+        {
+          "category": "Persona-Drift",
+          "bottleneck": "Lieblings-User-Persona steht seit 3 Monaten unverändert. Realität hat sich verschoben.",
+          "advanceLabel": "Quarterly refresh →",
+          "advance": "Im Quarterly Rebuild prüfst du Persona und Roadmap gegen aktuelle Survey-Antworten. Refreshed Persona schlägt heilige Persona."
+        }
+      ],
+      "keys": [
+        {
+          "tag": "50/50 ist die Regel",
+          "bullets": [
+            "Doubling-Down auf Fanatics ≈ 50%",
+            "Unblocking der Hopefuls ≈ 50%",
+            "Toleranz 40/60–60/40 — alles andere driftet"
+          ]
+        },
+        {
+          "tag": "Weekly Check-In",
+          "bullets": [
+            "30 Minuten, fester Slot, nicht-skippbar",
+            "Was wurde geshippt, was kommt nächste Woche",
+            "Was haben Fanatics und Hopefuls gesagt"
+          ]
+        },
+        {
+          "tag": "Monthly Review",
+          "bullets": [
+            "Survey rerun an aktuelle Engaged User",
+            "Score, V/S/N-Verteilung, Open-Text-Trends",
+            "Trend ist wichtiger als Punktwert"
+          ]
+        },
+        {
+          "tag": "Quarterly Rebuild",
+          "bullets": [
+            "Persona refreshen aus den letzten 3 Surveys",
+            "Roadmap re-prioritisieren",
+            "Anti-Patterns explizit benennen und cutten"
+          ]
+        },
+        {
+          "tag": "Halt durch bis 2× ≥40%",
+          "bullets": [
+            "Eine Messung ist Lärm, zwei sind Signal",
+            "Superhuman brauchte ~9 Monate",
+            "Disziplin schlägt Talent hier"
+          ]
+        }
+      ],
+      "deliverables": [
+        "Doubling-Down-Initiativen (≥5, aus Fanatics-Patterns extrahiert)",
+        "Unblocking-Initiativen (≥5, aus Hopefuls-Blockers extrahiert)",
+        "50/50-Split dokumentiert (Toleranz 40/60–60/40)",
+        "Weekly-Check-In-Rhythmus aktiv (30 Min, fester Slot)",
+        "Monthly Review mit Score-Update gefahren",
+        "Quarterly Rebuild mit refreshed Lieblings-User + Roadmap"
+      ],
+      "sources": [
+        {
+          "initials": "SE",
+          "name": "Sean Ellis",
+          "subtitle": "40%-Benchmark",
+          "color": "#534AB7",
+          "prompt": "Erzähle mir mehr über Sean Ellis und den 40%-Benchmark im Kontext von Step 1.5 — Verbessern bis User dein Produkt nicht mehr missen wollen."
+        },
+        {
+          "initials": "FR",
+          "name": "First Round",
+          "subtitle": "50/50 Roadmap-Split",
+          "color": "#378ADD",
+          "prompt": "Erzähle mir mehr über First Round und den 50/50 Roadmap-Split im Kontext von Step 1.5 — Verbessern bis User dein Produkt nicht mehr missen wollen."
+        },
+        {
+          "initials": "RV",
+          "name": "Rahul Vohra",
+          "subtitle": "Superhuman PMF Engine",
+          "color": "#1D9E75",
+          "prompt": "Erzähle mir mehr über Rahul Vohra und die Superhuman PMF Engine im Kontext von Step 1.5 — Verbessern bis User dein Produkt nicht mehr missen wollen."
+        },
+        {
+          "initials": "YC",
+          "name": "Y Combinator",
+          "subtitle": "Continuous Improvement",
+          "color": "#D85A30",
+          "prompt": "Erzähle mir mehr über Y Combinator und Continuous Improvement im Kontext von Step 1.5 — Verbessern bis User dein Produkt nicht mehr missen wollen."
+        }
+      ]
+    }
+  }
+}

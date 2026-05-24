@@ -1,0 +1,4 @@
+{"_schema":"v1","fields":{"type":"decision|learning|hypothesis_discarded","date":"YYYY-MM-DD","path":"pmf|gtm|scale","other_fields_per_type":"see SKILL.md"}}
+{"type":"decision","date":"2026-05-01","path":"pmf","decision":"Switching survey channel from email to in-app","reasoning":"Email response rate was 4%","reverse_if":"In-app response rate stays below 15% after 2 weeks"}
+{"type":"learning","date":"2026-05-01","path":"pmf","category":"Product","insight":"Power users segment: Solo consultants using it daily for client prep","source":"survey","action":"Add 'consultant prep' to HXC profile"}
+{"type":"hypothesis_discarded","date":"2026-05-01","path":"gtm","hypothesis":"Cold outbound to mid-market would convert at 3%","reason":"Tested 100 prospects, 0 closed, 1 reply","replaced_by":"Founder-led demos via warm intro"}

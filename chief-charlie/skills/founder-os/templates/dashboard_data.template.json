@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "_doc": "Founder-OS single source of truth. All UI pages (home, roadmap, projects, tasks, kpis) bind into this file via $state pointers. Fields prefixed with `_doc` or `_doc_` are documentation for the agent — they are ignored by the UI. Do not rename top-level keys. Append-only events go to *.jsonl files. When uncertain about a field, ask the user before writing.",
+  "_doc_here_invariant": "INVARIANT: `here: true` MUST appear at exactly ONE node across the entire roadmap.phases[*].subs[*] tree. Before setting `here: true` on a new sub, you MUST set/leave `here: false` (or remove the key) on every other sub. Treat this as a hard agent rule — never let two `here: true` exist at the same time.",
+  "data": {
+    "_doc_business_profile": "Captured during onboarding Q1-Q5. Immutable after onboarding unless explicitly changed by user. product_description / problem_solved / customer_description come from Q5 (free-text parsed into three parts). elevator_pitch holds Q5 verbatim. pmf_substage only set when current_path = 'pmf' (Q3a). gtm_substage only set when current_path = 'gtm' (Q3b).",
+    "business_profile": {
+      "build_type": null,
+      "buyer": null,
+      "stage": null,
+      "pmf_substage": null,
+      "gtm_substage": null,
+      "industry": null,
+      "product_description": null,
+      "problem_solved": null,
+      "customer_description": null,
+      "elevator_pitch": null
+    },
+    "_doc_focus": "Captured during onboarding Q6-Q8. Updated whenever user reframes priorities (e.g. in Quarterly Rebuild). today = full Q6 answer verbatim. revenue_today / team_size_today / status_one_liner = parsed from Q6 if extractable. goal_12m and milestone_90d are STRUCTURED OBJECTS (Q7) with revenue_target / customer_count_target / team_size_target / qualitative_goals[] / raw_text — populate what the user gives, leave the rest null. raw_text is always populated.",
+    "focus": {
+      "today": null,
+      "revenue_today": null,
+      "team_size_today": null,
+      "status_one_liner": null,
+      "goal_12m": {
+        "revenue_target": null,
+        "customer_count_target": null,
+        "team_size_target": null,
+        "qualitative_goals": [],
+        "raw_text": null
+      },
+      "milestone_90d": {
+        "revenue_target": null,
+        "customer_count_target": null,
+        "team_size_target": null,
+        "qualitative_goals": [],
+        "raw_text": null
+      },
+      "bottleneck": null
+    },
+    "_doc_current_path": "One of: 'pmf' | 'gtm' | 'scale'. Routed during onboarding from business_profile + focus answers. Switched only via explicit Path Switch flow (see SKILL.md).",
+    "current_path": null,
+    "_doc_path_state": "Path-scoped state for the active path. Replaces the legacy pmf-state.md frontmatter.",
+    "path_state": {
+      "onboarding_completed_at": null,
+      "current_step": null,
+      "readiness": {},
+      "survey_infrastructure": {},
+      "reminders": {
+        "checkin_id": null
+      },
+      "cadences": {
+        "last_checkin_at": null,
+        "next_checkin_due": null
+      },
+      "warnings": []
+    },
+    "_doc_path_state_archive": "Preserved path_state from previous paths after a path switch. Keyed by path name (e.g. 'pmf'). Never written to during normal operation.",
+    "path_state_archive": {},
+    "_doc_currentFocus": "ONE sentence. The single outcome that defines success this phase. Max ~80 chars. No lists, no commas-as-bullets.",
+    "currentFocus": null,
+    "_doc_bottleneck": "What is currently blocking progress. title = ≤6 words. description = 1 sentence.",
+    "bottleneck": {
+      "title": null,
+      "description": null
+    },
+    "_doc_oneThing": "The ONE highest-leverage action for this week. ≤80 chars, action verb first. Surfaced on home and tasks pages.",
+    "oneThing": null,
+    "_doc_projects": "Projects for the current step. 6–8 per step total. Each: n (rank), title (≤4 words), why (1 sentence), goal (1 sentence with numeric target), outcome (1 sentence), status ('current' | 'later' | 'done'), step (sub_id like '2.1'). 2–3 marked as `current` to actively work on; rest are `later` until promoted.",
+    "projects": [],
+    "_doc_tasks": "Concrete tasks for this week. Fields: id (int, unique), text (≤80 chars), done (bool), today (bool — pinned to today), project (matches projects[*].title), date ('today'|'this week'|ISO), dateTone ('today'|'week'). New tasks: increment max id by 1.",
+    "tasks": [],
+    "_doc_kpis": "Phase-exit metrics. rows: metric (≤24 chars), current (string with unit), target (string with unit), status ('red'|'amber'|'green'). 3–5 rows max.",
+    "kpis": {
+      "phase": null,
+      "rows": []
+    },
+    "_doc_doNotDo": "Anti-priorities — things explicitly NOT to do right now (rendered as \"Don't do yet\" on home.json). 2–4 short imperatives (≤6 words).",
+    "doNotDo": {
+      "home": []
+    },
+    "_doc_roadmap": "Phase tree. currentSubphase = id of the sub where `here: true`. INVARIANT: exactly one sub across all phases has `here: true`. Mutate by flipping `here` (off the old, on the new); never edit currentFocus directly — it is derived. badge = optional pill rendered next to the roadmap title (e.g. 'First version' during onboarding). Set to null to hide.",
+    "roadmap": {
+      "currentSubphase": null,
+      "phases": [],
+      "badge": null
+    }
+  }
+}

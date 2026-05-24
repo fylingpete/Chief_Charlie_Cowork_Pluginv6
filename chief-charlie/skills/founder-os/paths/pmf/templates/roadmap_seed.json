@@ -1,0 +1,222 @@
+{
+  "_doc": "PMF roadmap seed. Phase 1 = full pre-PMF → 40% journey (Idee → MVP → Erste User → Survey → Iteration). Other phases unchanged. INVARIANT: here:true on exactly ONE sub. Default start = 1.1; onboarding routing may set 1.3/1.4/1.5 if user already past those steps.",
+  "currentSubphase": "1.1",
+  "phases": [
+    {
+      "id": "1",
+      "n": 1,
+      "name": "Search for Product-Market Fit",
+      "meta": "pmf",
+      "color": "#8B5CF6",
+      "expanded": true,
+      "subs": [
+        {
+          "id": "1.1",
+          "name": "Problem & Founder-Fit",
+          "here": true,
+          "question": "Bin ich der richtige Founder für ein echtes Problem?",
+          "deliverables": [
+            "YC 10-Fragen-Idea-Eval beantwortet",
+            "Founder-Market-Fit Statement (warum DU)",
+            "5–10 Problem-Interviews mit Engaged-User-Sample",
+            "≥5 unabhängige Problem-Quotes (Mom-Test-Style, keine Leading Questions)",
+            "Solution-Hypothese in einem Satz"
+          ],
+          "exit": "Validiertes Problem mit ≥5 unabhängigen User-Quotes; klare Solution-Hypothese; Founder-Market-Fit artikuliert."
+        },
+        {
+          "id": "1.2",
+          "name": "MVP scope & build",
+          "question": "Was ist die kleinste Version, die das Problem löst?",
+          "deliverables": [
+            "Feature-Liste (max 5–10) auf das Wesentliche gestrichen",
+            "Non-Features explizit ausgeschlossen",
+            "MVP live (manual / hacky / fake-it-with-Google-Forms ist OK)",
+            "Feedback-Mechanismus aktiv (Email / Form / direct contact)"
+          ],
+          "exit": "MVP live; ≥3 echte User nutzen es ohne Founder-Hand-Holding."
+        },
+        {
+          "id": "1.3",
+          "name": "Erste 10 User & Lernen",
+          "question": "Kann ich 10–30 User manuell rekrutieren und von ihnen lernen?",
+          "deliverables": [
+            "Target-Customer-Liste (Namen, LinkedIn, Email)",
+            "Outreach-Log: wer kontaktiert, wann, Antwort",
+            "≥10 engagierte User (2× sessions in 2 Wochen)",
+            "Session-Notes pro User (was probiert, wo gestockt)",
+            "≥3 dokumentierte Friktion-Patterns (Blocker vs Nice-to-have)"
+          ],
+          "exit": "≥10 engagierte User aktiv; ≥3 Friktion-Patterns aus Beobachtung (nicht aus Selbstauskunft)."
+        },
+        {
+          "id": "1.4",
+          "name": "PMF-Score messen & Lieblings-User identifizieren",
+          "question": "Wie hoch ist mein PMF-Score und wer ist mein idealer Kunde?",
+          "deliverables": [
+            "4-Frage Sean-Ellis-Survey (Google Form) live",
+            "Engaged-User-Filter dokumentiert (z.B. 2× in 2 Wochen)",
+            "Survey-Link nur an engaged users (Manual-Follow-up bei Non-Respondern)",
+            "Sean-Ellis-Score berechnet (% Very Disappointed)",
+            "V/S/N-Segmentation-Sheet",
+            "Lieblings-User-Persona v1 (extrahiert aus Very-Disappointed, 5 Pflichtfelder: Name, Rolle, Kontext, Hauptnutzen, Frustration)"
+          ],
+          "exit": "Score berechnet (≥15 directional / ≥40 benchmark-valid); Lieblings-User v1 mit 5 Pflichtfeldern; Segmentation-Sheet komplett."
+        },
+        {
+          "id": "1.5",
+          "name": "Verbessern bis User dein Produkt nicht mehr missen wollen",
+          "question": "Habe ich echtes Product/Market Fit erreicht?",
+          "deliverables": [
+            "Doubling-Down-Initiativen (≥5, aus Fanatics-Patterns)",
+            "Unblocking-Initiativen (≥5, aus Hopefuls-Blockers)",
+            "50/50-Split dokumentiert (Tolerance 40/60–60/40)",
+            "Weekly-Check-In-Rhythmus aktiv",
+            "Monthly-Measurement mit Score-Update",
+            "Quarterly-Rebuild mit refreshed Lieblings-User + Roadmap"
+          ],
+          "exit": "Sean-Ellis-Score ≥40% in 2 aufeinanderfolgenden Monatsmessungen."
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "n": 2,
+      "name": "Search for Go-to-Market Fit",
+      "meta": "repeatability",
+      "color": "#378ADD",
+      "expanded": false,
+      "gate": "Locked until Sean Ellis Score ≥ 40% (confirmed in 2 consecutive monthly reviews)",
+      "subs": [
+        {
+          "id": "2.1",
+          "name": "Find repeatable sales motion",
+          "question": "Will many people pay?",
+          "deliverables": [
+            "Defined ICP segment",
+            "Repeatable outreach motion",
+            "Sales script",
+            "Conversion baseline",
+            "Weekly pipeline rhythm"
+          ],
+          "exit": "The same ICP, pain, message, and sales motion repeatedly create paying customers."
+        },
+        {
+          "id": "2.2",
+          "name": "Prove non-founders can sell",
+          "question": "Can non-founders sell this?",
+          "deliverables": [
+            "Founder sales playbook",
+            "Sales rep onboarding",
+            "Demo / discovery script",
+            "Objection handling guide",
+            "First non-founder sales attempts"
+          ],
+          "exit": "A non-founder can close customers without the founder driving every step."
+        },
+        {
+          "id": "2.3",
+          "name": "Make it scalable",
+          "question": "Does this scale?",
+          "deliverables": [
+            "Scalable sales process",
+            "CRM / pipeline structure",
+            "Handoff process",
+            "Reporting rhythm",
+            "Clear roles and responsibilities"
+          ],
+          "exit": "The sales motion keeps working as volume increases without creating chaos."
+        },
+        {
+          "id": "2.4",
+          "name": "Ensure customer success",
+          "question": "Can we scale without churn?",
+          "deliverables": [
+            "Onboarding process",
+            "Customer success checklist",
+            "Activation metric",
+            "Retention tracking",
+            "Churn reason log"
+          ],
+          "exit": "New customers consistently reach value, stay active, and do not churn faster as growth increases."
+        },
+        {
+          "id": "2.5",
+          "name": "Make it profitable",
+          "question": "Can we scale profitably?",
+          "deliverables": [
+            "Unit economics model",
+            "CAC / payback tracking",
+            "Margin analysis",
+            "Pricing validation",
+            "Channel profitability view"
+          ],
+          "exit": "Growth produces profitable revenue with acceptable acquisition cost, payback, and delivery margin."
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "n": 3,
+      "name": "Scaling the business",
+      "meta": "expansion",
+      "color": "#22C55E",
+      "expanded": false,
+      "gate": "Locked until repeatable + profitable sales motion proven.",
+      "subs": [
+        {
+          "id": "3.1",
+          "name": "Hit the gas & scale",
+          "question": "Does this keep scaling when we hit the gas?",
+          "deliverables": [
+            "Growth budget",
+            "Hiring plan",
+            "Channel scaling plan",
+            "Weekly growth targets",
+            "Operating dashboard"
+          ],
+          "exit": "Increasing resources creates more growth without breaking the sales, product, or delivery system."
+        },
+        {
+          "id": "3.2",
+          "name": "Scale the organization & processes",
+          "question": "Can the organization handle the growth?",
+          "deliverables": [
+            "Org structure",
+            "Leadership responsibilities",
+            "Operating cadence",
+            "Process documentation",
+            "KPI ownership"
+          ],
+          "exit": "The business can operate predictably without every important decision flowing through the founder."
+        },
+        {
+          "id": "3.3",
+          "name": "Expand internationally",
+          "question": "Can this work in new markets?",
+          "deliverables": [
+            "Market selection criteria",
+            "Localization plan",
+            "Country-specific GTM test",
+            "Local partner / sales approach",
+            "Expansion scorecard"
+          ],
+          "exit": "At least one new market shows early repeatability without requiring a completely new business model."
+        },
+        {
+          "id": "3.4",
+          "name": "Add additional product lines",
+          "question": "Can we expand the product without losing focus?",
+          "deliverables": [
+            "Expansion opportunity map",
+            "Customer demand evidence",
+            "Product line hypothesis",
+            "Pricing / packaging test",
+            "Cross-sell motion"
+          ],
+          "exit": "A new product line creates additional revenue from the existing customer base without weakening the core business."
+        }
+      ]
+    }
+  ]
+}

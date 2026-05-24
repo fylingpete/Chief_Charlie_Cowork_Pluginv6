@@ -1,0 +1,666 @@
+{
+  "schema_version": 1,
+  "_doc": "GTM roadmap defaults. Mirrors paths/pmf/roadmap_defaults.json structure. Used by auto_fill_recipe to populate dashboard_data.* fields. Each step has overview/bottlenecks/keys/deliverables/sources. Sources may be overridden at auto-fill time based on path_state.current_best_channel from onboarding Q10.",
+  "steps": {
+    "2.1": {
+      "overview": {
+        "whyThisStep": "Bevor du Reps hirest oder Ads schaltest, brauchst du ein geschriebenes Playbook — ein ICP, ein Channel, eine Message, eine Sales-Motion — das mindestens 5–10 Deals über denselben Prozess produziert hat.",
+        "deepenPrompt": "Vertiefe Step 2.1 — Find a repeatable sales motion mit mir. Wie picke ich genau einen ICP, einen Channel und eine Message ohne mich zu verzetteln, und was zählt wirklich als „repeatable\"?",
+        "mainGoal": "Ein geschriebenes Sales-Playbook auf einer Seite — ICP+/-, Use-Case, Channel-Pick (Hormozi Core Four), Core Message, Sales-Motion stage-by-stage — das ein Fremder lesen und ausführen könnte. Plus mindestens zwei wiederholte Wins über denselben Prozess.",
+        "mainQuestion": "Verkaufe ich mit einem klaren Playbook wiederholbar an einen klar definierten ICP — oder schließe ich Deals durch Founder-Magic, die nicht reproduzierbar ist?",
+        "whatMatters": [
+          { "icon": "target", "label": "Ein ICP, kein Sammelsurium" },
+          { "icon": "spark", "label": "Hair-on-fire Urgency" },
+          { "icon": "compass", "label": "Ein Channel, nicht vier" },
+          { "icon": "users", "label": "Founder verkauft selbst" }
+        ],
+        "readyWhen": [
+          "ICP mit positiven UND negativen Charakteristiken in einem Dokument.",
+          "Core Message folgt 5 Regeln (benefit-led, klar, einfach, kurz, differenzierend).",
+          "Genau ein Channel gewählt und in den letzten 30 Tagen exklusiv getestet.",
+          "Sales-Motion stage-by-stage geschrieben — Lead-Source bis Close, mit Conversion-Rates pro Übergang."
+        ]
+      },
+      "bottlenecks": [
+        {
+          "category": "ICP-Schärfe",
+          "bottleneck": "Du verkaufst an „alle, die das Problem haben\". Jeder Deal sieht anders aus, jeder Pitch wird neu gebaut. Skok's #1 Trap: ohne ICP-Pick muss jedes Team mehrere Personas bedienen.",
+          "advanceLabel": "EINEN ICP picken →",
+          "advance": "Du wählst genau ein Target-Market + einen Use-Case + einen Buyer-in-the-Org. Negative ICP wird genauso geschrieben wie positiver."
+        },
+        {
+          "category": "Messaging",
+          "bottleneck": "Deine Pitch klingt wie jeder Konkurrent: „AI-powered\", „next-generation\", „automated insights\". Buyer hören nichts und vergessen alles.",
+          "advanceLabel": "Quarter-Inch-Hole-Test →",
+          "advance": "Du beschreibst die Outcome in den Worten der Buyer. Kein Feature, kein Jargon — der Schmerz und die Lösung in einer Zeile, die ein Buyer sofort versteht."
+        },
+        {
+          "category": "Channel-Pick",
+          "bottleneck": "Du testest Cold Email + LinkedIn + Paid + Content + Referrals parallel. Kein Kanal bekommt genug Volumen für ein verlässliches Signal. Du weißt am Ende des Quartals nichts.",
+          "advanceLabel": "EINEN Channel exklusiv testen →",
+          "advance": "Du wählst genau einen aus Hormozi's Core Four (Warm/Content/Cold/Paid) und gibst ihm 30+ Tage exklusiv. Erst Resultat, dann zweiter Channel."
+        },
+        {
+          "category": "Founder-led Sales",
+          "bottleneck": "Du willst einen Sales-Rep einstellen, weil dir Sales unangenehm ist. Du hast aber selbst noch nicht 50 Buyer-Conversations geführt.",
+          "advanceLabel": "Founder muss selbst verkaufen →",
+          "advance": "Du führst 50-150 echte Buyer-Conversations selbst (Kazanjy: 100-150 in 2 Monaten). Erst danach kann das Playbook geschrieben werden — und erst dann darf ein Pathfinder-Rep dazu kommen."
+        },
+        {
+          "category": "Repeatability-Test",
+          "bottleneck": "Du hast drei Deals geschlossen — alle über persönliche Connections, alle anders. Du hältst das für Repeatability. Es ist keine.",
+          "advanceLabel": "Zwei Wins via gleichem Prozess →",
+          "advance": "Du schließt mindestens zwei Deals mit demselben ICP, derselben Message, demselben Channel, derselben Motion. Drei Deals via drei Prozessen ist Anekdote, nicht Repeatability."
+        }
+      ],
+      "keys": [
+        {
+          "tag": "Pick exactly one of everything",
+          "bullets": [
+            "Ein Target-Market — höchste Kombination aus Urgency + Willingness to Pay + TAM",
+            "Ein Use-Case — die spezifische Pain in den Buyer-Worten",
+            "Ein Channel aus Hormozi's Core Four — exklusiv für 30+ Tage"
+          ]
+        },
+        {
+          "tag": "Hair-on-fire Urgency ist der Filter",
+          "bullets": [
+            "Wenn die Pain nicht brennt, schließt der Deal nicht — egal wie gut das Script ist",
+            "Frag: „Was passiert, wenn du das Problem in 6 Monaten nicht gelöst hast?\"",
+            "Wenn die Antwort „nichts dramatisches\" ist — wechsel den Buyer oder Use-Case"
+          ]
+        },
+        {
+          "tag": "Schreib das Playbook stage-by-stage",
+          "bullets": [
+            "Jede Funnel-Stage hat: Trigger, Owner, Artefakt, erwartete Dauer, Conversion-Rate",
+            "Der Conversion-Rate-Spalte trennt „repeatable\" von „lucky\"",
+            "Ein Fremder muss das Dokument lesen und es ausführen können"
+          ]
+        },
+        {
+          "tag": "Negative ICP genauso ernst nehmen",
+          "bullets": [
+            "Liste schreibt sich aus den Deals, die du verloren oder gepostponed hast",
+            "Sub-50-employee, falsche Industry, kein bestehendes CRM, unrealistische Custom-Wünsche",
+            "Negative ICP rettet 2.4 (Customer Success) vor Churn-Bombs"
+          ]
+        },
+        {
+          "tag": "50+ Buyer-Conversations als Pflicht",
+          "bullets": [
+            "Kazanjy: 100-150 echte Conversations in 2 Monaten — nicht nur Netzwerk",
+            "15-20 Conversations pro Woche durchhalten ist die operative Disziplin",
+            "Notiere wörtlich, was Buyer sagen — die Worte sind dein Messaging"
+          ]
+        }
+      ],
+      "deliverables": [
+        "ICP-Dokument mit positiven und negativen Charakteristiken (≥5 Felder pro Hälfte)",
+        "Core Message in einer Zeile (5 Regeln: benefit-led, klar, einfach, kurz, differenzierend)",
+        "Channel-Pick aus Hormozi Core Four, mit Begründung (Warm/Content/Cold/Paid)",
+        "50+ dokumentierte Buyer-Conversations mit wörtlichen Quotes",
+        "Sales-Playbook stage-by-stage geschrieben (Lead-Source bis Close)",
+        "5–10 wiederholte Wins via dem geschriebenen Playbook (gleicher ICP, gleiche Message, gleicher Channel, gleiche Motion)"
+      ],
+      "sources": [
+        {
+          "initials": "MS",
+          "name": "Matrix · Skok",
+          "subtitle": "Phase 4 ICP & Messaging",
+          "color": "#378ADD",
+          "prompt": "Erzähle mir mehr über David Skok's Phase 4 — ICP-Definition mit positiven und negativen Charakteristiken und benefit-led Messaging — im Kontext von Step 2.1 Find a repeatable sales motion."
+        },
+        {
+          "initials": "AH",
+          "name": "Alex Hormozi",
+          "subtitle": "Grand Slam Offer · Core Four",
+          "color": "#D85A30",
+          "prompt": "Erzähle mir mehr über Alex Hormozi's Grand Slam Offer und Core Four Channel-Logik im Kontext von Step 2.1 Find a repeatable sales motion."
+        },
+        {
+          "initials": "YC",
+          "name": "Y Combinator",
+          "subtitle": "Founder must sell · Best first customers",
+          "color": "#F26625",
+          "prompt": "Erzähle mir mehr über YC's Lehre zu Founder-led Sales und Best First Customers im Kontext von Step 2.1 Find a repeatable sales motion."
+        },
+        {
+          "initials": "PK",
+          "name": "Pete Kazanjy",
+          "subtitle": "100 Buyer Conversations",
+          "color": "#1D9E75",
+          "prompt": "Erzähle mir mehr über Pete Kazanjy's Methode der 100-150 Buyer-Conversations und Founder-led Selling im Kontext von Step 2.1 Find a repeatable sales motion."
+        }
+      ]
+    },
+    "2.2": {
+      "overview": {
+        "whyThisStep": "Hier trennt sich das Founder-Geschäft vom skalierbaren Geschäft: ein normaler Rep muss mit deinem Playbook >4× sein Gesamtgehalt (OTE) in Bookings produzieren können, mit Customers, die genauso happy sind wie deine Founder-Deals.",
+        "deepenPrompt": "Vertiefe Step 2.2 — Prove non-founders can sell mit mir. Wie strukturiere ich die ersten zwei Rep-Hires (Trailblazer + Grinder) und wann ist das Playbook wirklich übergeben?",
+        "mainGoal": "Mindestens einer von zwei eingestellten Reps generiert >4× seine OTE in Bookings post-ramp, mit happy Customers — ohne Founder auf jedem Call.",
+        "mainQuestion": "Kann ein normaler Sales-Rep mit dem Playbook profitabel verkaufen — oder bleibt das Geschäft an mir kleben?",
+        "whatMatters": [
+          { "icon": "users", "label": "2 Reps in Cohort, nicht 1" },
+          { "icon": "target", "label": ">4× OTE als Bar" },
+          { "icon": "compass", "label": "Coaching-Cadence wöchentlich" },
+          { "icon": "spark", "label": "Founder vom Closing-Seat weg" }
+        ],
+        "readyWhen": [
+          "Zwei Reps eingestellt (idealerweise ein Trailblazer + ein Grinder, Gally).",
+          "Mindestens einer hit >4× OTE Productivity post-ramp.",
+          "Customers von Rep-Deals sind so happy wie Customers von Founder-Deals (CSAT/NPS-Parität).",
+          "Founder seit mind. 30 Tagen NICHT auf Closing-Calls dieser Reps."
+        ]
+      },
+      "bottlenecks": [
+        {
+          "category": "Hire-Profile",
+          "bottleneck": "Du stellst einen weiteren Pathfinder ein, weil du weißt, wie es ist, Playbook zu bauen. Aber 2.2 testet, ob jemand das Playbook AUSFÜHRT, nicht baut. Pathfinder Nr. 2 testet das nicht.",
+          "advanceLabel": "Trailblazer + Grinder hiren →",
+          "advance": "Einer (Trailblazer) testet die Edges, einer (Grinder) führt das Playbook 1:1 aus. Gally's Lehre — beide Profile, im Cohort."
+        },
+        {
+          "category": "Founder-Loslassen",
+          "bottleneck": "Der Rep stockt im Call, du springst rein und schließt selbst. Macht dich produktiv kurzfristig, beweist 2.2 nie.",
+          "advanceLabel": "Vom Closing-Seat weg →",
+          "advance": "Du coachst nach dem Call mit Recording, nicht im Call. Wenn der Rep den Deal verliert — Lerngelegenheit, kein Notfall."
+        },
+        {
+          "category": "Coaching-Cadence",
+          "bottleneck": "Reps laufen alleine, du hörst alle 2 Wochen mal rein. Reps driften, das Playbook deteriortiert in 8 Wochen.",
+          "advanceLabel": "Wöchentliche Call-Reviews →",
+          "advance": "Schatz' Black Sheet: jede Woche ein Call-Recording pro Rep gegen die Rubric. Die ersten 90 Tage non-negotiable."
+        },
+        {
+          "category": "OTE-Bar",
+          "bottleneck": "Dein Rep ist bei 1.5× OTE Productivity und du behältst ihn, weil „er sympathisch ist und die Pipeline aufbaut\". 2.5 (Profitable) wird dann unmöglich.",
+          "advanceLabel": "4× OTE als Pflicht-Cut →",
+          "advance": "Bei <2× post-ramp: cutten und neu hiren. Skok's Math: nur >4× macht LTV:CAC > 3 erreichbar bei realistischem CAC."
+        },
+        {
+          "category": "Playbook-Stabilität",
+          "bottleneck": "Das Playbook ändert sich jede Woche, weil du jede Rep-Erfahrung in eine Update einbaust. Reps wissen am Ende nicht mehr, was gilt.",
+          "advanceLabel": "Playbook für 30 Tage einfrieren →",
+          "advance": "Du loggst Änderungswünsche in einer Liste, freezst das Playbook 30 Tage, releasest dann ein Update gebündelt. Stabilität schlägt Optimierung."
+        }
+      ],
+      "keys": [
+        {
+          "tag": "2 Reps im Cohort, kein Solo-Hire",
+          "bullets": [
+            "Solo-Rep gibt dir keine Vergleichsdaten — Erfolg = Unicorn? Misserfolg = Playbook?",
+            "Trailblazer + Grinder als Profile (Gally) — testet Edges UND Stabilität",
+            "Cohort ist auch der Start des Pod-Modells (Kazanjy revenue mitochondria)"
+          ]
+        },
+        {
+          "tag": "Demo als Story, nicht Feature-Tour",
+          "bullets": [
+            "YC's Regel: Story ist die des Buyers, nicht des Produkts",
+            "Open mit Buyer's Pain (aus Discovery), zeig das EINE Feature, das löst, end mit Outcome",
+            "Drei Slides reichen — Feature-Tours killen Conversion"
+          ]
+        },
+        {
+          "tag": "Objection-Handling-Frameworks aus Hormozi",
+          "bullets": [
+            "Kill Zombies — Obstacles VOR dem Preis adressieren",
+            "CLOSER — Clarify, Label, Overview, Sell vacation, Explain, Reinforce",
+            "1-to-10 Close, AAA Reframing, Never ask „do you have questions\""
+          ]
+        },
+        {
+          "tag": "Rep-Discipline: Listen, breathe, prep",
+          "bullets": [
+            "Listen 2× more than talk — Buyer glauben sich, nicht dem Rep",
+            "Breathe the script — auswendig, sonst kannst du nicht zuhören",
+            "5min Pre-Call-Prep schlägt 30min Rapport-Talk"
+          ]
+        },
+        {
+          "tag": "Hand-off-zu-CS-Kriterien schreiben",
+          "bullets": [
+            "Was muss der Rep dem CSM übergeben? Welche Felder, welche Erwartungen?",
+            "Wenn Reps over-promisen, explodiert 2.4 (Customer Success)",
+            "Hand-off-Trigger explizit im Playbook — nicht „der Customer ist happy\""
+          ]
+        }
+      ],
+      "deliverables": [
+        "Sales-Playbook (full version) mit ICP-Scoring, Discovery-Script, Demo-Storyline, Objection-Map, Pricing-Guardrails, Handoff-zu-CS",
+        "Demo / Discovery Script (3 Slides max, Story-basiert)",
+        "Objection-Handling-Guide (Top 10 Objections mit Hormozi-Frameworks)",
+        "Coaching-Cadence aktiv: wöchentliches Call-Review pro Rep gegen Schatz Black Sheet",
+        "Onboarding-Plan für neue Reps (Woche 1, 2, 3, erste Solo-Calls)",
+        "Mindestens 1 von 2 Reps bei >4× OTE Productivity post-ramp"
+      ],
+      "sources": [
+        {
+          "initials": "MS",
+          "name": "Matrix · Skok",
+          "subtitle": "Phase 5 Non-founders sell",
+          "color": "#378ADD",
+          "prompt": "Erzähle mir mehr über David Skok's Phase 5 — Hand-off vom Founder zum Rep, 2-Rep-Cohort, >4× OTE — im Kontext von Step 2.2 Prove non-founders can sell."
+        },
+        {
+          "initials": "AH",
+          "name": "Alex Hormozi",
+          "subtitle": "CLOSER Framework · Kill Zombies",
+          "color": "#D85A30",
+          "prompt": "Erzähle mir mehr über Alex Hormozi's CLOSER Framework und Objection-Handling im Kontext von Step 2.2 Prove non-founders can sell."
+        },
+        {
+          "initials": "MS",
+          "name": "Matrix · Schatz",
+          "subtitle": "Call Coaching Black Sheet",
+          "color": "#534AB7",
+          "prompt": "Erzähle mir mehr über Stephanie Schatz' Call-Coaching-Rubric und Hiring-Discipline im Kontext von Step 2.2 Prove non-founders can sell."
+        },
+        {
+          "initials": "YC",
+          "name": "Y Combinator",
+          "subtitle": "B2B Sales Tactics · Demo as Story",
+          "color": "#F26625",
+          "prompt": "Erzähle mir mehr über YC's B2B Sales Tactics und Demo-as-Story im Kontext von Step 2.2 Prove non-founders can sell."
+        }
+      ]
+    },
+    "2.3": {
+      "overview": {
+        "whyThisStep": "Skalieren ist nicht „mehr vom selben, nur größer\" — es ist eine neue Motion mit überlappenden Lead-Sources, und der Hiring-Plan muss an den Lead-Supply-Plan gekoppelt sein, sonst sitzen Reps idle.",
+        "deepenPrompt": "Vertiefe Step 2.3 — Make growth scalable mit mir. Wie layere ich Lead-Sources über Quartale, wann hire ich den ersten Marketing-Lead, und wie baue ich die Marketing-Sales-Contract auf?",
+        "mainGoal": "Zwei oder mehr Lead-Sources tragen je >20% zum Lead-Volumen bei. Zwei Sales-Pods bei Quota seit 2 Quartalen. Demand-Gen-Lead eingestellt und shippt Campaigns. CRM-Hygiene 100%.",
+        "mainQuestion": "Skaliert das Geschäft, wenn ich gleichzeitig Reps hire UND Lead-Volumen wachse — oder gibt es einen versteckten Engpass?",
+        "whatMatters": [
+          { "icon": "compass", "label": "≥2 Lead-Sources layered" },
+          { "icon": "users", "label": "Pod-Modell (SDR+AE+CSM)" },
+          { "icon": "target", "label": "Bookings-Math sichtbar" },
+          { "icon": "spark", "label": "Marketing-Sales Contract" }
+        ],
+        "readyWhen": [
+          "Zwei oder mehr Lead-Sources je >20% Anteil — keine Single-Channel-Dependence.",
+          "Bookings-Plan steht auf Papier, Lead-Supply-Plan deckt ihn ohne Saturation-Annahmen.",
+          "Mindestens zwei Sales-Pods bei Quota seit ≥2 Quartalen.",
+          "CRM: 100% der Opps haben Stage, Close-Date, Deal-Size — wöchentliche Pipeline-Review dokumentiert."
+        ]
+      },
+      "bottlenecks": [
+        {
+          "category": "Single-Channel-Dependence",
+          "bottleneck": "Paid Search bringt 90% der Leads. Du hire 5 Reps. Paid Search saturiert in Q2. Reps laufen leer, du gibst ihnen die Schuld.",
+          "advanceLabel": "Zweiten Channel BEVOR der erste saturiert →",
+          "advance": "Du startest Channel #2 bei 70% Auslastung von Channel #1, nicht bei 100%. S-Curves überlappen, Total-Volume steigt weiter."
+        },
+        {
+          "category": "Hiring vs Lead-Supply",
+          "bottleneck": "Sales-Hiring-Plan ist linear, Demand-Gen-Plan ist eine Saturation-Kurve. Reps gehen idle, PPR fällt, Bookings stallen.",
+          "advanceLabel": "Hiring an Lead-Supply koppeln →",
+          "advance": "Sales-Hiring-Plan wird aus Lead-Supply-Forecast abgeleitet, nicht umgekehrt. Wenn Leads nicht skalieren, wird auch Hiring zurückgehalten."
+        },
+        {
+          "category": "Erster Marketing-Hire",
+          "bottleneck": "Du hire einen „Head of Brand\" oder „VP Marketing mit Strategie-Background\". Branding füllt keine Pipeline. 6 Monate weg.",
+          "advanceLabel": "Demand-Gen-Profil hiren →",
+          "advance": "Du fragst nach Track-Record konkreter Lead-Generating-Campaigns mit Numbers. „Strategie\" und „Brand-Work\" als Hauptthema = Red Flag."
+        },
+        {
+          "category": "Marketing-Sales-Misalignment",
+          "bottleneck": "Sales sagt „die Leads sind Müll\", Marketing sagt „Sales follow-uppt nicht\". Beide haben recht, niemand hat ein fixbares Problem.",
+          "advanceLabel": "Cohort-Funnel + Contract →",
+          "advance": "Cohort-Analyse statt Snapshots. Reverse-Engineering von Closes → SQLs → MQLs → Leads. Beide Seiten unterschreiben den Vertrag mit Zahlen."
+        },
+        {
+          "category": "ARR vs Bookings",
+          "bottleneck": "ARR steigt, du fühlst dich gut. Aber Bookings (New + Expansion - Churned) ist seit 3 Monaten flat. Du siehst es erst in 6 Monaten in ARR.",
+          "advanceLabel": "Bookings monthly tracken →",
+          "advance": "Bookings monatlich, ARR quartalsweise. Bookings-Flat ist Frühwarnung; ARR ist Spätindikator. Catch it in Bookings."
+        }
+      ],
+      "keys": [
+        {
+          "tag": "Lead-Sources als überlappende S-Curves",
+          "bullets": [
+            "Quarter 1-4: Paid Search dominiert",
+            "Quarter 4-8: Paid Social adds on top",
+            "Quarter 8-12: Content/SEO/Outbound layered in"
+          ]
+        },
+        {
+          "tag": "Bookings-Math als Operating-Frame",
+          "bullets": [
+            "Bookings = #Reps × Productivity-per-Rep (Skok)",
+            "Hebel: mehr Reps oder höheres PPR — beide brauchen Quartale",
+            "Wachstum kommt diskontinuierlich, weil Reps 3-6 Monate rampen"
+          ]
+        },
+        {
+          "tag": "Pod-Modell statt isolierte Reps",
+          "bullets": [
+            "Revenue Mitochondria (Kazanjy): SDR + 2-3 AEs + CSM als Cloning-Unit",
+            "Skalieren = Pods adden, nicht Solo-AEs",
+            "Pod #2 erst, wenn Pod #1 seit 2 Quartalen Quota hit"
+          ]
+        },
+        {
+          "tag": "Marketing-Sales-Contract via Cohort-Math",
+          "bullets": [
+            "Reverse-Engineering: 1000 Closes → 4000 SQLs → 13K MQLs → 266K Leads",
+            "Beide Seiten committen zu den Conversion-Rates",
+            "Wenn Numbers missen, ownt die Seite mit der Lücke den Fix"
+          ]
+        },
+        {
+          "tag": "Sales-Operations + Hormozi Tactics",
+          "bullets": [
+            "Lead-Routing in 60 Sekunden = 4× Revenue",
+            "Spezialisierung (SDR/AE/CSM) verkürzt Training",
+            "Maximize availability, pull-up appointments — Volume-Hebel"
+          ]
+        }
+      ],
+      "deliverables": [
+        "Demand-Gen-Lead eingestellt, Profil Demand-Gen (nicht Brand)",
+        "≥2 aktive Lead-Sources mit dokumentiertem Beitrag und CAC pro Channel",
+        "Bookings-Plan auf Papier mit Lead-Supply-Plan gekoppelt",
+        "Marketing-Sales-Contract dokumentiert (Cohort-basierte Conversion-Rates)",
+        "≥2 Sales-Pods (SDR+AE+CSM) im Aufbau, mindestens einer bei Quota seit 2 Quartalen",
+        "CRM-Hygiene: 100% Opps mit Stage/Close-Date/Deal-Size + wöchentliche Pipeline-Review dokumentiert"
+      ],
+      "sources": [
+        {
+          "initials": "MS",
+          "name": "Matrix · Skok",
+          "subtitle": "Phase 6 Scalable Lead Sources",
+          "color": "#378ADD",
+          "prompt": "Erzähle mir mehr über David Skok's Phase 6 — Layered Lead Sources, Bookings-Math, First Marketing Hire — im Kontext von Step 2.3 Make growth scalable."
+        },
+        {
+          "initials": "AH",
+          "name": "Alex Hormozi",
+          "subtitle": "Core Four · Lead Routing",
+          "color": "#D85A30",
+          "prompt": "Erzähle mir mehr über Alex Hormozi's Core Four Channel-Layering und Lead-Routing-Tactics im Kontext von Step 2.3 Make growth scalable."
+        },
+        {
+          "initials": "MS",
+          "name": "Matrix · Schatz",
+          "subtitle": "Pipeline Forecasting",
+          "color": "#534AB7",
+          "prompt": "Erzähle mir mehr über Stephanie Schatz' Pipeline-Forecasting-Discipline im Kontext von Step 2.3 Make growth scalable."
+        },
+        {
+          "initials": "MS",
+          "name": "Matrix · Skok",
+          "subtitle": "Bookings-Math · Cohort Funnel",
+          "color": "#1D9E75",
+          "prompt": "Erzähle mir mehr über David Skok's Bookings-Math (#Reps × PPR) und Cohort-Funnel-Analyse im Kontext von Step 2.3 Make growth scalable."
+        }
+      ]
+    },
+    "2.4": {
+      "overview": {
+        "whyThisStep": "Ohne Retention bricht LTV zusammen und LTV:CAC mit ihm — und Churn spikt typischerweise genau dann, wenn du skalierst, weil ICP-Disziplin lockerer wird und Sales over-promised.",
+        "deepenPrompt": "Vertiefe Step 2.4 — Ensure customers succeed mit mir. Wie definiere ich ein Activation-Metric, was ist mein Time-to-Wow, und wie engineere ich Negative Churn?",
+        "mainGoal": "Activation-Metric definiert und predictive. Onboarding hit den Time-to-Wow-Target. Logo-Retention >85% bei 12 Monaten. NDR >100% oder klarer Pfad dahin.",
+        "mainQuestion": "Erreichen meine Kunden den versprochenen Wert konsistent — und expandieren sie schneller, als sie churnen?",
+        "whatMatters": [
+          { "icon": "spark", "label": "Time-to-Wow definiert" },
+          { "icon": "target", "label": "Activation-Metric predictive" },
+          { "icon": "compass", "label": "Cohort-Retention statt Snapshot" },
+          { "icon": "users", "label": "Negative Churn (NDR > 100%)" }
+        ],
+        "readyWhen": [
+          "Activation-Metric definiert, instrumentiert, validiert gegen ≥1 Cohort.",
+          "Onboarding-Flow mit explizitem Time-to-Wow-Target — Median-Customer hit es.",
+          "Logo-Retention >85% bei 12 Monaten (B2B SaaS Benchmark).",
+          "NDR >100% oder Pricing-Axes designed, die Expansion ermöglichen."
+        ]
+      },
+      "bottlenecks": [
+        {
+          "category": "Activation-Metric",
+          "bottleneck": "„Engagement\" ist deine Metric. Aber niemand weiß, was sie predicted. Du kannst keine Hebel ziehen.",
+          "advanceLabel": "EIN predictives Activation-Event picken →",
+          "advance": "Eine spezifische Aktion, die mit 90-Tage-Retention korreliert (Slack: 2000 Messages; Dropbox: 1 File geshart). Instrumented und gegen Cohort validiert."
+        },
+        {
+          "category": "Time-to-Wow",
+          "bottleneck": "Deine Onboarding-Flow hat 5 Steps mit manuellen Imports. 60% drop-out vor Activation. Du fixst es nicht, weil „die User sollten halt durchziehen\".",
+          "advanceLabel": "Friktion radikal cutten →",
+          "advance": "Salsify-Case (Skok): 5-Step → 3-Step mit Auto-Scrape = 3× Conversion. Jeder Step ist ein Drop-Off-Point. Cut ruthlessly."
+        },
+        {
+          "category": "Snapshot-Retention",
+          "bottleneck": "„Wir haben 92% Retention\" sagst du. Aber das ist Snapshot. Cohort-Decay zeigt: 12-Monats-Retention ist 68%.",
+          "advanceLabel": "Cohort-View Pflicht →",
+          "advance": "Logo-Retention by Acquisition-Month, NDR by Cohort, Channel-attributed Retention. Snapshots lügen, Cohorts nicht."
+        },
+        {
+          "category": "Flat Pricing",
+          "bottleneck": "Du verkaufst $X/Monat flat. Negative Churn ist mathematisch unmöglich. Du wächst nur über Net-New-Logos.",
+          "advanceLabel": "Pricing-Axes designen →",
+          "advance": "Seats, Usage, Editions, Add-ons — mindestens eine Achse, auf der Customers wachsen können. Designe BEVOR du sie brauchst."
+        },
+        {
+          "category": "CS als Reparatur-Team",
+          "bottleneck": "Du sagst CS-Team „löst den Churn\". Aber Churn ist upstream: ICP-Loose in 2.1, Over-Promising in 2.2, Activation broken in 2.4-Onboarding.",
+          "advanceLabel": "Upstream-Audit statt CS-Aufstockung →",
+          "advance": "Bei Churn-Spike: erst ICP-Audit (kommen falsche Customers rein?), dann Sales-Hand-off-Audit (over-promised?), dann Activation-Audit. CS fixt Symptom, nicht Ursache."
+        }
+      ],
+      "keys": [
+        {
+          "tag": "Time-to-Wow ist messbar und kurz",
+          "bullets": [
+            "SMB: <1 Stunde, Mid-Market: <1 Woche, Enterprise: <30 Tage",
+            "Salsify: 5-Step Trial → 3-Step = 3× Conversion",
+            "Jeder Step im Onboarding ist Drop-Off-Risiko"
+          ]
+        },
+        {
+          "tag": "Activation-Metric als single predictives Event",
+          "bullets": [
+            "Eine Aktion, die mit 90-Tage-Retention korreliert",
+            "Slack: 2000 Messages; Dropbox: 1 File geshart; Figma: 1 Design opened by 1 invited viewer",
+            "Instrumented im Produkt, gegen Cohort validiert"
+          ]
+        },
+        {
+          "tag": "Cohort-Retention als einzige valid Reporting-View",
+          "bullets": [
+            "Logo-Retention by Acquisition-Month (1, 6, 12, 24)",
+            "Net Dollar Retention by Cohort — Goldstandard NDR > 100%",
+            "Channel-attributed Retention — billige CACs aus High-Churn-Channels sind nicht billig"
+          ]
+        },
+        {
+          "tag": "Negative Churn als SaaS-Multiplier",
+          "bullets": [
+            "Skok: NDR > 100% ist single biggest SaaS-Wachstums-Hebel",
+            "Pricing-Axes designen BEVOR du sie brauchst (Seats/Usage/Editions/Add-ons)",
+            "Champion-Departure-Risk tracken — Re-Onboarding-Play für neue Champions"
+          ]
+        },
+        {
+          "tag": "Hormozi 4 R's nach jedem Sale",
+          "bullets": [
+            "Review (Bewertung), Referral (Empfehlung), Retain (länger halten), Resell (mehr verkaufen)",
+            "In den Post-Sale-Sequenz eingebaut, nicht ad-hoc",
+            "Customer-Journey end-to-end mit Friction-Points markiert"
+          ]
+        }
+      ],
+      "deliverables": [
+        "Activation-Metric definiert + instrumentiert + gegen ≥1 Cohort als predictive validiert",
+        "Onboarding-Flow mit explizitem Time-to-Wow-Target dokumentiert",
+        "Cohort-Retention-Reporting (Logo + NDR + Channel-attributed) monatlich",
+        "Pricing-Axes für Negative Churn designed (Seats / Usage / Editions / Add-ons)",
+        "Churn-Reason-Taxonomie mit Root-Cause-Klassifikation pro Churn-Event",
+        "CSM-Cadence wöchentlich mit At-Risk-Accounts via Signals (nicht Gut)"
+      ],
+      "sources": [
+        {
+          "initials": "MS",
+          "name": "Matrix · Skok",
+          "subtitle": "Phase 7 Customer Success",
+          "color": "#378ADD",
+          "prompt": "Erzähle mir mehr über David Skok's Phase 7 — Customer Success, Churn-Spike beim Skalieren, Negative Churn — im Kontext von Step 2.4 Ensure customers succeed."
+        },
+        {
+          "initials": "AH",
+          "name": "Alex Hormozi",
+          "subtitle": "Retention Strategy · 4 R's",
+          "color": "#D85A30",
+          "prompt": "Erzähle mir mehr über Alex Hormozi's Retention-Strategy und die 4 R's (Review, Referral, Retain, Resell) im Kontext von Step 2.4 Ensure customers succeed."
+        },
+        {
+          "initials": "YC",
+          "name": "Y Combinator",
+          "subtitle": "Improving Retention",
+          "color": "#F26625",
+          "prompt": "Erzähle mir mehr über YC's Lehren zu Retention-Improvement und Cohort-Behavior im Kontext von Step 2.4 Ensure customers succeed."
+        },
+        {
+          "initials": "MS",
+          "name": "Matrix · Skok",
+          "subtitle": "Time to Wow · Salsify Case",
+          "color": "#1D9E75",
+          "prompt": "Erzähle mir mehr über David Skok's Time-to-Wow Framework und den Salsify-Case (5→3 Steps) im Kontext von Step 2.4 Ensure customers succeed."
+        }
+      ]
+    },
+    "2.5": {
+      "overview": {
+        "whyThisStep": "Gas geben ohne bewiesene Unit Economics ist der teuerste Fehler im ganzen Roadmap — drei Gates müssen halten: LTV:CAC > 3, CAC-Payback < 18 Monate, Gross Margin > 70%.",
+        "deepenPrompt": "Vertiefe Step 2.5 — Make it profitable mit mir. Wie compute ich LTV:CAC pro Channel, was ist die richtige Reaktion bei Payback > 18 Monaten, und wie modelle ich das Cash-Trough?",
+        "mainGoal": "Drei Gates erfüllt: LTV:CAC > 3 (auf 12-Monats-Cohorts), CAC-Payback < 18 Monate (< 12 für SMB), Gross Margin > 70%. Plus: Channel-Level-Economics monatlich, Rule of 40 ≥ 40, Cash-Trough modelliert.",
+        "mainQuestion": "Mache ich für jeden Customer den ich akquiriere am Ende Profit — und kann ich das durch Skalieren beibehalten?",
+        "whatMatters": [
+          { "icon": "target", "label": "LTV:CAC > 3" },
+          { "icon": "spark", "label": "CAC-Payback < 18 Monate" },
+          { "icon": "compass", "label": "Gross Margin > 70%" },
+          { "icon": "users", "label": "Channel-CAC einzeln, nicht blended" }
+        ],
+        "readyWhen": [
+          "LTV:CAC > 3 auf Cohorts ≥12 Monate alt (validiert, nicht extrapoliert).",
+          "CAC-Payback < 18 Monate (< 12 wenn SMB).",
+          "Gross Margin > 70% — wenn nicht: Hosting/Support/Pricing fixen.",
+          "Channel-Level-Economics monatlich. Rule of 40 ≥ 40 oder klarer Pfad in 2 Quartalen."
+        ]
+      },
+      "bottlenecks": [
+        {
+          "category": "Aggregat-CAC",
+          "bottleneck": "Du compute blended CAC und es sieht okay aus. Aber Channel A hat $500 CAC, Channel B hat $5K. Du skalierst B — Unit-Economics killen sich.",
+          "advanceLabel": "CAC pro Channel monatlich →",
+          "advance": "Channel-CAC = (Spend + Sales-Effort) ÷ Customers per Channel. Plus LTV pro Channel. Profitable Channels by LTV:CAC, nicht by CAC."
+        },
+        {
+          "category": "LTV auf Revenue, nicht Gross Profit",
+          "bottleneck": "Du compute LTV mit Revenue × Lifetime. Hormozi's LTGP-Lehre: das überschätzt LTV um ~30%. LTV:CAC sieht gesünder aus, als es ist.",
+          "advanceLabel": "LTGP statt LTV verwenden →",
+          "advance": "Lifetime Gross Profit = LTV × Gross Margin. LTGP:CAC > 3, nicht LTV:CAC. Das ist die Math, die wirklich gilt."
+        },
+        {
+          "category": "Payback-Trough",
+          "bottleneck": "LTV:CAC = 5 sieht super aus. Aber Payback ist 36 Monate. Das ist ein Cash-Trough-Geschäft — du brauchst viel Kapital, um die Lücke zu überbrücken.",
+          "advanceLabel": "Payback < 18 Monate als Pflicht →",
+          "advance": "Auch bei starkem LTV:CAC: Payback < 18 Mo (B2B), < 12 Mo (SMB). Sonst Cash-Trough — survivable nur mit Funding oder massiver Expansion."
+        },
+        {
+          "category": "Margin-Cut via Support-Quality",
+          "bottleneck": "Margin ist niedrig. Du cuttest CS-Headcount, sparst Cost. Customers churnen, LTV bricht ein. Net negativer Effekt.",
+          "advanceLabel": "Pricing oder Infra fixen, nicht Support →",
+          "advance": "Hormozi: cheapest way to fix Unit Economics ist meistens Pricing erhöhen. Sonst Self-Serve-Migration, Infra-Optimization. Support-Cut killt LTV."
+        },
+        {
+          "category": "Stage-inappropriate Metrics",
+          "bottleneck": "Du sitzt bei $200K ARR und obsesst über CAC-Dashboards. Skok: stage-inappropriate. Du solltest noch Bookings-Components tracken.",
+          "advanceLabel": "Stage-appropriate Metrics →",
+          "advance": "PMF: Sean Ellis, Engagement. 2.1-2.3: Bookings-Components. 2.5+: Full Unit Economics. Falsche Metriken zur falschen Phase = falsche Decisions."
+        }
+      ],
+      "keys": [
+        {
+          "tag": "Drei Gates non-negotiable",
+          "bullets": [
+            "LTV:CAC > 3 (3-5 healthy, >5 unter-investiert)",
+            "CAC-Payback < 18 Monate (< 12 SMB, < 6 excellent)",
+            "Gross Margin > 70% (50-70% under-margined, 80%+ best-in-class)"
+          ]
+        },
+        {
+          "tag": "Channel-Level-Economics als Pflicht-View",
+          "bullets": [
+            "Aggregat-CAC versteckt den Killer-Channel",
+            "Profitable Channels by LTV:CAC ratio, nicht by CAC alone",
+            "Channel mit $5K CAC + $30K LTV schlägt Channel mit $500 CAC + $1K LTV"
+          ]
+        },
+        {
+          "tag": "Hormozi Profitability-Hebel",
+          "bullets": [
+            "LTGP statt LTV — Lifetime Gross Profit ist was wirklich CAC zurückzahlt",
+            "Premium Pricing — cheapest way to fix Unit Economics, B2B-Founder unterpricen meist",
+            "Client-Financed Acquisition — Pricing so designen, dass First Payment = CAC"
+          ]
+        },
+        {
+          "tag": "SaaS Cash-Trough verstehen + modellieren",
+          "bullets": [
+            "Trough vertieft sich beim Skalieren — feature, not bug",
+            "Cohort-Math beweist: Geschäft ist gesund, nicht sterbend",
+            "Investoren ohne Verständnis panicen am falschen Moment"
+          ]
+        },
+        {
+          "tag": "Rule of 40 + Bookings-Tracking",
+          "bullets": [
+            "Growth Rate + Profitability ≥ 40% (Skok)",
+            "EV/Gross Profit > EV/Revenue als Valuation-Predictor",
+            "Bookings monthly (Frühindikator), ARR quarterly (Spätindikator)"
+          ]
+        }
+      ],
+      "deliverables": [
+        "LTV:CAC > 3 measured auf ≥12 Monats-Cohorts (validiert, nicht extrapoliert)",
+        "CAC-Payback < 18 Monate (< 12 SMB) computiert und dokumentiert",
+        "Gross Margin > 70% — falls nicht: Fix-Plan (Pricing / Infra / Self-Serve)",
+        "Channel-Level-Economics-Tabelle monatlich (CAC, LTV, LTV:CAC pro Channel)",
+        "Rule of 40 Score ≥ 40 oder Pfad-Plan in 2 Quartalen",
+        "Cash-Trough modelliert mit Runway-Cover oder Funding-Plan in place"
+      ],
+      "sources": [
+        {
+          "initials": "MS",
+          "name": "Matrix · Skok",
+          "subtitle": "Phase 8 Unit Economics",
+          "color": "#378ADD",
+          "prompt": "Erzähle mir mehr über David Skok's Phase 8 — LTV:CAC > 3, CAC-Payback < 18 Monate, Gross Margin > 70% — im Kontext von Step 2.5 Make it profitable."
+        },
+        {
+          "initials": "AH",
+          "name": "Alex Hormozi",
+          "subtitle": "LTGP vs CAC · Premium Pricing",
+          "color": "#D85A30",
+          "prompt": "Erzähle mir mehr über Alex Hormozi's LTGP-vs-CAC und Premium-Pricing als Profitability-Hebel im Kontext von Step 2.5 Make it profitable."
+        },
+        {
+          "initials": "YC",
+          "name": "Y Combinator",
+          "subtitle": "B2B Pricing",
+          "color": "#F26625",
+          "prompt": "Erzähle mir mehr über YC's Pricing-Strategy und B2B-Pricing-Mechanik im Kontext von Step 2.5 Make it profitable."
+        },
+        {
+          "initials": "MS",
+          "name": "Matrix · Skok",
+          "subtitle": "Rule of 40 · Cash Trough",
+          "color": "#1D9E75",
+          "prompt": "Erzähle mir mehr über David Skok's Rule of 40 und SaaS Cash-Trough-Framework im Kontext von Step 2.5 Make it profitable."
+        }
+      ]
+    }
+  }
+}

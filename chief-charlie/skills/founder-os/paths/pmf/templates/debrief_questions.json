@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "_doc": "Step-specific debrief question for onboarding Q9. Charlie asks `main`; if the user's answer lacks one of the `followup_triggers.if_missing` signals, Charlie fires the matching `ask` once. Max 1 followup per Q9 to keep onboarding tight.",
+  "steps": {
+    "1.1": {
+      "main": "Was hast du bisher konkret gemacht, um das Problem deiner Zielgruppe zu verstehen? Wie viele Gespräche, was hast du gehört, was hast du daraus gemacht?",
+      "followup_triggers": [
+        { "if_missing": "interview_volume", "ask": "Wie viele Interviews konkret — 5? 20? Und mit welchem Profil?" },
+        { "if_missing": "synthesis", "ask": "Was war das stärkste Pattern, das mehrere Leute unabhängig genannt haben?" }
+      ]
+    },
+    "1.2": {
+      "main": "Was hast du dem ICP schon konkret gezeigt — Demo, Mockup, Prototyp? Wie reagieren die Leute darauf, was wollen sie sofort und was lassen sie liegen?",
+      "followup_triggers": [
+        { "if_missing": "show_what", "ask": "Was genau zeigst du — Slides, Klick-Prototyp, lauffähiges Produkt? Und seit wann?" },
+        { "if_missing": "reaction_signal", "ask": "Was machen die Nutzer NACH der Demo? Schreiben sie wieder, schicken sie's weiter, oder Stille?" }
+      ]
+    },
+    "1.3": {
+      "main": "Wie viele User hast du heute schon, wie kamen die zu dir, und was machen die mit dem Produkt nachdem sie es einmal benutzt haben?",
+      "followup_triggers": [
+        { "if_missing": "acquisition_channel", "ask": "Über welche Kanäle kamen die — Empfehlung, Cold Outreach, Content, Anzeige?" },
+        { "if_missing": "retention_signal", "ask": "Kommen die User von alleine wieder, oder musst du sie nochmal anstoßen?" }
+      ]
+    },
+    "1.4": {
+      "main": "Hast du schon Sean-Ellis-mäßig gemessen oder zumindest gefragt, wie enttäuscht die User wären? Und was sagen die, was du auf keinen Fall ändern darfst?",
+      "followup_triggers": [
+        { "if_missing": "measurement_attempt", "ask": "Hast du irgendeinen Survey gemacht, oder ist das noch Bauchgefühl?" },
+        { "if_missing": "fanatics_count", "ask": "Wie viele User würden sagen 'sehr enttäuscht ohne'?" }
+      ]
+    },
+    "1.5": {
+      "main": "Was machst du heute, um die Fans deines Produkts zu replizieren? Hast du Patterns identifiziert, die du verdoppeln könntest?",
+      "followup_triggers": [
+        { "if_missing": "doubling_down", "ask": "Welches Pattern hast du konkret schon mal versucht zu verdoppeln, und was kam dabei raus?" }
+      ]
+    }
+  }
+}

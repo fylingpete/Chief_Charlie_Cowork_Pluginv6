@@ -1,0 +1,2 @@
+{"_schema":"v1","fields":{"date":"YYYY-MM-DD","path":"pmf|gtm|scale","completed":"bool","answers":"object — check-in-specific Q/A pairs"}}
+{"date":"2026-05-01","path":"pmf","completed":true,"answers":{"new_responses":12,"biggest_insight":"X","biggest_decision":"none","blocker":"survey reach","next_week_change":"add LinkedIn DM channel","talked_to_very_disappointed":true,"hxc_learning":"Solo consultants love the calendar view"}}
