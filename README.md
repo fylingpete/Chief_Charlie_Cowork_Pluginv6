@@ -72,6 +72,14 @@ After onboarding, every session greets you with your current phase, bottleneck, 
 - `/log-decision` — append a decision to the log
 - `/log-learning` — append a learning to the log
 
+### Account (optional)
+
+- `/login <jwt-token>` — connect a Chief Charlie account
+- `/account` — show current account info
+- `/logout` — disconnect
+
+See "Connect to Chief Charlie account" below for how to get a token.
+
 The `founder-os` skill auto-fires whenever you discuss founder work — you don't have to invoke it explicitly. The `decision-logging` skill watches every conversation for decisions/learnings and appends them automatically.
 
 ## Subagents
@@ -90,6 +98,67 @@ Compared to the full Chief Charlie (desktop app + LangGraph backend), the plugin
 | WhatsApp + Voice channels | ❌ Out of scope | Cowork is desktop only |
 | Activity heatmap + usage dashboard | ❌ Dropped | No backend to count messages |
 | Auto-managed reminders + cron | ⚠️ Use native | Claude Cowork has native scheduled tasks |
+
+## Connect to Chief Charlie account
+
+The plugin works fully standalone. Connecting to a Chief Charlie account unlocks server-side features (currently: identity injection in SessionStart; soon: mem0 sync, WhatsApp, Pro features).
+
+### As an end user
+
+If your admin gave you a JWT token, run:
+
+```
+/login eyJhbGc...
+```
+
+Verify it worked:
+
+```
+/account
+```
+
+### As an admin generating a test token
+
+Chief Charlie uses Supabase JWTs (HS256, `audience: "authenticated"`). To generate a long-lived token for a specific user, you need:
+
+1. The user's UUID from the `cc_users` table
+2. The `PROD_JWT_SECRET` (or `DEV_JWT_SECRET`) from your Memphis `.env`
+
+Then run this Python snippet (requires `pip install pyjwt`):
+
+```python
+import jwt
+from datetime import datetime, timedelta, timezone
+
+USER_ID = "e6f5156f-5f53-4a94-ace1-8d9a490bd430"  # the user's UUID
+JWT_SECRET = "<your PROD_JWT_SECRET from .env>"
+EXPIRES_DAYS = 365  # long-lived for plugin testing
+
+now = datetime.now(timezone.utc)
+token = jwt.encode(
+    {
+        "sub": USER_ID,
+        "aud": "authenticated",
+        "iat": now,
+        "exp": now + timedelta(days=EXPIRES_DAYS),
+    },
+    JWT_SECRET,
+    algorithm="HS256",
+)
+print(token)
+```
+
+Paste the printed token into `/login <token>` in Claude Cowork.
+
+### Configuration
+
+| Variable | Default | Purpose |
+|---|---|---|
+| `CHIEF_CHARLIE_API_URL` | `https://api.chiefcharlie.ai` | Memphis backend URL. Override for dev: `https://devapi.chiefcharlie.ai` |
+
+Set it in your shell config (e.g., `~/.zshrc`) before starting Claude Cowork, or as a per-project env var.
+
+Token is stored at `~/.chief-charlie/auth.json` with `chmod 600`. The SessionStart hook calls `GET /api/users/me` on every session start (with a 5s timeout — silent fallback if the backend is down).
 
 ## Add connectors (MCPs)
 
