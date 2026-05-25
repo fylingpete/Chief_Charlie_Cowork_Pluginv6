@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 # Chief Charlie SessionStart hook
-# Injects (1) Chief Charlie account identity from Memphis and
-#         (2) current Founder OS state from .founder-os/dashboard_data.json
+# Injects current Founder OS state from .founder-os/dashboard_data.json
 # into the session context.
+#
+# Account identity is now handled by the MCP server (memphis OAuth) — see
+# .mcp.json. The plugin no longer reads or writes ~/.chief-charlie/auth.json.
 
 set -euo pipefail
 
 DASHBOARD="${PWD}/.founder-os/dashboard_data.json"
-AUTH_FILE="${HOME}/.chief-charlie/auth.json"
-API_URL="${CHIEF_CHARLIE_API_URL:-https://api.chiefcharlie.ai}"
 
 escape_for_json() {
     local s="$1"
@@ -36,96 +36,12 @@ EOF
 }
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Block 1 — Account identity (from Memphis)
-# ─────────────────────────────────────────────────────────────────────────────
-
-build_account_block() {
-    if [ ! -f "$AUTH_FILE" ]; then
-        printf '%s' "## Chief Charlie Account
-
-Not logged in. Tell the user (if relevant) they can run \`/login <jwt-token>\` to connect their Chief Charlie account and unlock account-specific features. The plugin still works fully without login — onboarding and Founder OS run locally."
-        return
-    fi
-
-    if ! command -v jq >/dev/null 2>&1; then
-        printf '%s' "## Chief Charlie Account
-
-Auth token found but \`jq\` is not installed — cannot parse it. Suggest \`brew install jq\` on macOS. Account verification skipped this session."
-        return
-    fi
-
-    local token
-    token=$(jq -r '.token // empty' "$AUTH_FILE" 2>/dev/null)
-    if [ -z "$token" ]; then
-        printf '%s' "## Chief Charlie Account
-
-Auth file exists but token is empty. User should re-run \`/login <jwt-token>\`."
-        return
-    fi
-
-    if ! command -v curl >/dev/null 2>&1; then
-        printf '%s' "## Chief Charlie Account
-
-Auth token present but \`curl\` is not available — cannot verify against Memphis."
-        return
-    fi
-
-    # Call Memphis /api/users/me. Time out fast so we don't block session start.
-    local response status body
-    response=$(curl -s -m 5 -w "\n%{http_code}" \
-        -H "Authorization: Bearer ${token}" \
-        "${API_URL}/api/users/me" 2>/dev/null || echo $'\n000')
-    status=$(printf '%s' "$response" | tail -n1)
-    body=$(printf '%s' "$response" | sed '$d')
-
-    case "$status" in
-        200)
-            local first last email tz lang
-            first=$(printf '%s' "$body" | jq -r '.first_name // ""')
-            last=$(printf '%s' "$body" | jq -r '.last_name // ""')
-            email=$(printf '%s' "$body" | jq -r '.email // ""')
-            tz=$(printf '%s' "$body" | jq -r '.timezone // "Europe/Berlin"')
-            lang=$(printf '%s' "$body" | jq -r '.language // "de"')
-            printf '%s' "## Chief Charlie Account
-
-- **Logged in as:** ${first} ${last} (${email})
-- **Timezone:** ${tz}
-- **Language:** ${lang}
-- **Backend:** ${API_URL}
-
-Greet the user by first name when appropriate."
-            ;;
-        401)
-            printf '%s' "## Chief Charlie Account
-
-Stored token is invalid or expired (Memphis returned 401). Tell the user to run \`/login <new-token>\` with a fresh token. Do NOT auto-delete the file — let the user decide."
-            ;;
-        000)
-            printf '%s' "## Chief Charlie Account
-
-Memphis at ${API_URL} is not reachable (network down, tunnel offline, or timeout). Token is stored; will retry next session. Plugin features that need backend are unavailable this session."
-            ;;
-        *)
-            printf '%s' "## Chief Charlie Account
-
-Memphis returned HTTP ${status} when verifying token. User may need to check backend status or re-login."
-            ;;
-    esac
-}
-
-ACCOUNT_BLOCK=$(build_account_block)
-
-# ─────────────────────────────────────────────────────────────────────────────
-# Block 2 — Founder OS dashboard snapshot
+# Founder OS dashboard snapshot
 # ─────────────────────────────────────────────────────────────────────────────
 
 # Case A: no dashboard → first-time founder OS user
 if [ ! -f "$DASHBOARD" ]; then
-    emit "${ACCOUNT_BLOCK}
-
----
-
-## Chief Charlie — Founder OS State
+    emit "## Chief Charlie — Founder OS State
 
 No Founder OS state found in this workspace (\`.founder-os/dashboard_data.json\` is missing).
 
@@ -136,11 +52,7 @@ fi
 
 # Case B: dashboard exists but jq missing
 if ! command -v jq >/dev/null 2>&1; then
-    emit "${ACCOUNT_BLOCK}
-
----
-
-## Chief Charlie — Founder OS State
+    emit "## Chief Charlie — Founder OS State
 
 A Founder OS dashboard exists at \`.founder-os/dashboard_data.json\` but \`jq\` is not installed, so the session-start hook cannot parse it. Suggest \`brew install jq\`. You can also Read the dashboard yourself to load state.
 
@@ -160,11 +72,7 @@ TODAY=$(date +%Y-%m-%d)
 
 # Case C: mid-onboarding
 if [ "$ONBOARDING_DONE" = "null" ] || [ -z "$ONBOARDING_DONE" ]; then
-    emit "${ACCOUNT_BLOCK}
-
----
-
-## Chief Charlie — Founder OS State
+    emit "## Chief Charlie — Founder OS State
 
 State file exists but onboarding is incomplete (\`onboarding_completed_at\` is null). Resume the \`/onboarding\` flow where the user left off.
 
@@ -186,11 +94,7 @@ if [ -z "$CADENCE_ALERT" ]; then
 "
 fi
 
-emit "${ACCOUNT_BLOCK}
-
----
-
-## Chief Charlie — Founder OS Dashboard Snapshot
+emit "## Chief Charlie — Founder OS Dashboard Snapshot
 
 Treat this as the current snapshot of \`dashboard_data.json\`. Use it for current state without re-reading the file. Re-read only when about to write or when this block is missing.
 
