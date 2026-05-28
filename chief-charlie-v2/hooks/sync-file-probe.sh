@@ -1,47 +1,45 @@
 #!/usr/bin/env bash
 # Chief Charlie sync-file probe hook (PostToolUse — Write|Edit)
 #
-# This is a PROBE-ONLY version. It does not push anything to a server.
-# It logs the full hook payload so we can verify three things in Co-Work:
-#   1. PostToolUse hooks declared in a plugin manifest actually fire.
-#   2. The payload format matches what we already observed in Conductor
-#      (JSON via stdin with tool_input.file_path).
-#   3. Plugin env vars CLAUDE_PLUGIN_ROOT and CLAUDE_PLUGIN_DATA are set
-#      so the real sync hook can persist its auth token via them.
+# PROBE-ONLY rc3 version. Logs to stderr (captured in session JSONL) so
+# we don't depend on $HOME-based file IO which proved unreliable in
+# Co-Work (rc1/rc2 file at $HOME/cc_sync_probe.log never materialized
+# in any findable location).
 #
-# Once the probe confirms the above, this script is replaced by the real
-# sync logic (read auth token, walk up for project.json, PUT to backend).
+# Also attempts a secondary write to ${CLAUDE_PLUGIN_DATA}/probe.log to
+# verify whether the plugin data dir is set and writable.
 #
-# Failure mode: any error MUST exit 0 silently — never break the user's
-# write/edit flow because of a sync hook bug.
+# Grep for "===PROBE===" in the session JSONL to find this output.
+#
+# Failure mode: every error path exits 0 — never break the user's
+# write/edit flow because of a probe hook bug.
 
 set +e
-LOG="$HOME/cc_sync_probe.log"
 PAYLOAD="$(cat 2>/dev/null || true)"
 
+# All diagnostics → stderr (lands in JSONL hook_success attachment).
 {
-  echo "=== $(date -u +%FT%TZ) ==="
-  echo "--- argv (count=$#) ---"
-  i=0; for a in "$@"; do echo "  [$i] $a"; i=$((i+1)); done
-  echo "--- env: CLAUDE_PLUGIN_*, CLAUDE_PROJECT_DIR, PWD ---"
-  echo "  CLAUDE_PLUGIN_ROOT=${CLAUDE_PLUGIN_ROOT:-<unset>}"
-  echo "  CLAUDE_PLUGIN_DATA=${CLAUDE_PLUGIN_DATA:-<unset>}"
-  echo "  CLAUDE_PROJECT_DIR=${CLAUDE_PROJECT_DIR:-<unset>}"
-  echo "  PWD=${PWD:-<unset>}"
-  echo "--- env: full CLAUDE_*, TOOL_*, HOOK_* ---"
-  env | grep -E '^(CLAUDE_|TOOL_|HOOK_)' | sort || echo "  (none)"
-  echo "--- stdin payload ---"
-  echo "$PAYLOAD"
-  echo "--- parsed (best-effort) ---"
+  echo "===PROBE=== start $(date -u +%FT%TZ)"
+  echo "===PROBE=== argv (count=$#)"
+  i=0; for a in "$@"; do echo "===PROBE===   [$i] $a"; i=$((i+1)); done
+  echo "===PROBE=== HOME=${HOME:-<unset>}"
+  echo "===PROBE=== PWD=${PWD:-<unset>}"
+  echo "===PROBE=== CLAUDE_PLUGIN_ROOT=${CLAUDE_PLUGIN_ROOT:-<unset>}"
+  echo "===PROBE=== CLAUDE_PLUGIN_DATA=${CLAUDE_PLUGIN_DATA:-<unset>}"
+  echo "===PROBE=== CLAUDE_PROJECT_DIR=${CLAUDE_PROJECT_DIR:-<unset>}"
+  echo "===PROBE=== ALL_CLAUDE_ENV:"
+  env | grep -E '^(CLAUDE_|TOOL_|HOOK_)' | sort | sed 's/^/===PROBE===   /' || echo "===PROBE===   (none)"
+  echo "===PROBE=== stdin payload (raw):"
+  echo "$PAYLOAD" | sed 's/^/===PROBE===   /'
   if command -v jq >/dev/null 2>&1; then
-    echo "  tool_name        : $(printf '%s' "$PAYLOAD" | jq -r '.tool_name // "<missing>"' 2>/dev/null)"
-    echo "  tool_input.file_path : $(printf '%s' "$PAYLOAD" | jq -r '.tool_input.file_path // "<missing>"' 2>/dev/null)"
-    echo "  cwd (from payload)   : $(printf '%s' "$PAYLOAD" | jq -r '.cwd // "<missing>"' 2>/dev/null)"
+    echo "===PROBE=== parsed tool_name        : $(printf '%s' "$PAYLOAD" | jq -r '.tool_name // "<missing>"' 2>/dev/null)"
+    echo "===PROBE=== parsed tool_input.file_path : $(printf '%s' "$PAYLOAD" | jq -r '.tool_input.file_path // "<missing>"' 2>/dev/null)"
+    echo "===PROBE=== parsed cwd              : $(printf '%s' "$PAYLOAD" | jq -r '.cwd // "<missing>"' 2>/dev/null)"
+    FP="$(printf '%s' "$PAYLOAD" | jq -r '.tool_input.file_path // empty' 2>/dev/null)"
   else
-    echo "  (jq not installed — skipping parse)"
+    echo "===PROBE=== jq not available"
+    FP=""
   fi
-  echo "--- walk-up for .chiefcharlie/project.json ---"
-  FP="$(printf '%s' "$PAYLOAD" | (command -v jq >/dev/null 2>&1 && jq -r '.tool_input.file_path // empty' 2>/dev/null))"
   if [ -n "$FP" ] && [ -e "$FP" ]; then
     DIR="$(cd "$(dirname "$FP")" 2>/dev/null && pwd || echo /)"
     FOUND=""
@@ -53,20 +51,29 @@ PAYLOAD="$(cat 2>/dev/null || true)"
       DIR="$(dirname "$DIR")"
     done
     if [ -n "$FOUND" ]; then
-      echo "  found: $FOUND"
+      echo "===PROBE=== walk-up project.json found: $FOUND"
     else
-      echo "  not found above $FP (this is expected for the probe)"
+      echo "===PROBE=== walk-up project.json: not found above $FP"
     fi
   else
-    echo "  skipped (no resolvable file_path)"
+    echo "===PROBE=== walk-up: skipped (no resolvable file_path)"
   fi
-  echo "--- end ---"
-  echo
-} >> "$LOG" 2>&1
-chmod 600 "$LOG" 2>/dev/null
+  # Secondary persistence experiment: try CLAUDE_PLUGIN_DATA
+  if [ -n "${CLAUDE_PLUGIN_DATA:-}" ]; then
+    if mkdir -p "$CLAUDE_PLUGIN_DATA" 2>/dev/null && \
+       echo "$(date -u +%FT%TZ) wrote here from probe" >> "$CLAUDE_PLUGIN_DATA/probe.log" 2>/dev/null; then
+      echo "===PROBE=== persisted to CLAUDE_PLUGIN_DATA/probe.log OK"
+    else
+      echo "===PROBE=== persistence to CLAUDE_PLUGIN_DATA/probe.log FAILED"
+    fi
+  else
+    echo "===PROBE=== CLAUDE_PLUGIN_DATA unset — cannot test persistence"
+  fi
+  echo "===PROBE=== end"
+} >&2
 
-# Emit empty hookSpecificOutput so Co-Work knows we ran cleanly.
-# (Returning nothing is also OK, but explicit is friendlier in logs.)
+# Clean stdout — empty hookSpecificOutput so Co-Work doesn't try to parse
+# probe data as additionalContext.
 cat <<'EOF'
 {
   "hookSpecificOutput": {
